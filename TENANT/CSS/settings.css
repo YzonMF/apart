@@ -1,0 +1,29 @@
+.setting-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #eee;
+}
+
+.setting-item:last-child {
+border-bottom: none;
+}
+
+.security-item {
+background: #f8f9fa;
+padding: 15px;
+border-radius: 8px;
+border-left: 4px solid #f5b400;
+margin-bottom: 15px;
+}
+
+.security-item p {
+margin-bottom: 8px;
+color: #666;
+}
+
+.security-item p strong {
+color: #f5b400;
+}
+

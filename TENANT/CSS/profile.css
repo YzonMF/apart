@@ -1,0 +1,48 @@
+.profile-header {
+display: flex;
+align-items: center;
+padding: 20px;
+background: #f8f9fa;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.avatar-circle {
+width: 60px;
+height: 60px;
+background: #f5b400;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 20px;
+}
+
+.avatar-circle i {
+font-size: 30px;
+color: #000;
+}
+
+.profile-header h3 {
+color: #f5b400;
+margin-bottom: 5px;
+}
+
+.address-item {
+background: #f8f9fa;
+padding: 15px;
+border-radius: 8px;
+border-left: 4px solid #f5b400;
+margin-top: 10px;
+}
+
+.address-item h4 {
+color: #f5b400;
+margin-bottom: 10px;
+}
+
+.address-item p {
+color: #666;
+margin-bottom: 5px;
+}
+

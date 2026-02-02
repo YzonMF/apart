@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="MCSS/settings.css">
+    <link rel="stylesheet" href="MCSS/sidebar.css">
+
+    <title>Settings</title>
+</head>
+<body>
+
+<div class="app">
+    <input type="checkbox" id="menu-toggle">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="managerdashboard.html" class="icon-btn active" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="profile.html" class="icon-btn" title="Profile">
+          <i class="fa-solid fa-user-circle"></i>
+        </a>
+        <a href="floor.html" class="icon-btn" title="Properties">
+          <i class="fa-solid fa-building"></i>
+        </a>
+        <a href="payments.html" class="icon-btn" title="Payments">
+          <i class="fa-solid fa-credit-card"></i>
+        </a>
+        <a href="notifications.html" class="icon-btn" title="Notifications">
+          <i class="fa-solid fa-bell"></i>
+        </a>
+        <a href="reports.html" class="icon-btn" title="Reports">
+          <i class="fa-solid fa-chart-bar"></i>
+        </a>
+        <a href="tenants.html" class="icon-btn" title="Tenants">
+          <i class="fa-solid fa-users"></i>
+        </a>
+        <a href="settings.html" class="icon-btn" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+      </div>
+    </aside>
+
+    <div class="content">
+        <div class="settings-container">
+
+            <div class="settings-header">
+                <h1><i class="fa-solid fa-gear"></i> Settings</h1>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fa-solid fa-user-cog"></i> Account</h2>
+
+                <div class="form-group">
+                    <label for="notifications">
+                        <i class="fa-solid fa-bell"></i> Email Notifications
+                    </label>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notifications" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-status">ON</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">
+                        <i class="fa-solid fa-language"></i> Language
+                    </label>
+                    <select id="language" class="form-select">
+                        <option selected>English</option>
+                        <option>Filipino</option>
+                        <option>Spanish</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fa-solid fa-shield"></i> Security</h2>
+
+                <div class="form-group">
+                    <label for="two-factor">
+                        <i class="fa-solid fa-lock"></i> 2FA Authentication
+                    </label>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="two-factor">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-status">OFF</span>
+                    </div>
+                </div>
+
+                <button class="btn-action">
+                    <i class="fa-solid fa-key"></i> Change Password
+                </button>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fa-solid fa-paintbrush"></i> Display</h2>
+
+                <div class="theme-options">
+                    <div class="theme-option">
+                        <div class="theme-preview light"></div>
+                        <span>Light</span>
+                    </div>
+                    <div class="theme-option active">
+                        <div class="theme-preview dark"></div>
+                        <span>Dark</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fa-solid fa-circle-info"></i> About</h2>
+                <div class="about-info">
+                    <p><strong>App Version:</strong> 2.1.0</p>
+                    <p><strong>Last Updated:</strong> Jan 31, 2026</p>
+
+                    <button class="btn-action">
+                        <i class="fa-solid fa-book"></i> Terms & Privacy
+                    </button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-save">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                </button>
+
+                <button class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.toggle-switch input').forEach(input => {
+        input.addEventListener('change', function () {
+            const status = this.closest('.toggle-container').querySelector('.toggle-status');
+            status.textContent = this.checked ? 'ON' : 'OFF';
+        });
+    });
+
+    document.querySelectorAll('.theme-option').forEach(option => {
+        option.addEventListener('click', function () {
+            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    document.querySelector('.btn-save').addEventListener('click', function () {
+        alert('Settings saved successfully!');
+    });
+
+    document.querySelector('.btn-logout').addEventListener('click', function () {
+        if (confirm('Are you sure you want to logout?')) {
+            window.location.href = "login.html";
+        }
+    });
+</script>
+
+</body>
+</html>

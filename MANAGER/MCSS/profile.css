@@ -1,0 +1,238 @@
+/* profile.css - Responsive profile page */
+.content {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    background: #000;
+    color: #f5b400;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 40px;
+    width: 100%;
+    border: 2px solid #f5b400;
+}
+
+.header i {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+.avatar {
+    width: clamp(120px, 20vw, 180px);
+    height: clamp(120px, 20vw, 180px);
+    background: #f5b400;
+    color: #000;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    border: 5px solid #000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content input {
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #333;
+    outline: none;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.content input:focus {
+    border-color: #f5b400;
+    box-shadow: 0 0 0 3px rgba(245, 180, 0, 0.1);
+}
+
+.content input::placeholder {
+    color: #888;
+    font-size: clamp(0.95rem, 2vw, 1rem);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+}
+
+.update-btn,
+.signout-btn {
+    padding: 18px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    transition: all 0.3s ease;
+    border: 2px solid;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.update-btn {
+    background: #f5b400;
+    color: #000;
+    border-color: #f5b400;
+}
+
+.update-btn:hover {
+    background: #e0a300;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(245, 180, 0, 0.3);
+}
+
+.signout-btn {
+    background: #111;
+    color: white;
+    border-color: #111;
+}
+
+.signout-btn:hover {
+    background: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 767px) {
+    .content {
+        padding: 30px 15px;
+    }
+    
+    .header {
+        padding: 20px;
+        margin-bottom: 30px;
+        font-size: 1.3rem;
+    }
+    
+    .avatar {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 30px;
+        font-size: 3rem;
+    }
+    
+    .content input {
+        padding: 16px 18px;
+        margin: 12px 0;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .update-btn,
+    .signout-btn {
+        width: 100%;
+        min-width: auto;
+        padding: 16px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px 10px;
+    }
+    
+    .header {
+        padding: 15px;
+        margin-bottom: 25px;
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .avatar {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 25px;
+        font-size: 2.5rem;
+    }
+    
+    .content input {
+        padding: 14px 16px;
+        margin: 10px 0;
+    }
+    
+    .update-btn,
+    .signout-btn {
+        padding: 14px 25px;
+    }
+}
+
+/* ========== TABLET (768px - 1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content {
+        padding: 30px;
+    }
+    
+    .button-group {
+        max-width: 600px;
+    }
+    
+    .update-btn,
+    .signout-btn {
+        min-width: 180px;
+    }
+}
+
+/* ========== DESKTOP (1024px and up) ========== */
+@media (min-width: 1024px) {
+    .content {
+        padding: 50px 40px;
+    }
+    
+    .avatar {
+        width: 200px;
+        height: 200px;
+        font-size: 5rem;
+        margin-bottom: 50px;
+    }
+    
+    .content input {
+        padding: 20px 25px;
+        margin: 20px 0;
+        font-size: 1.1rem;
+    }
+    
+    .button-group {
+        max-width: 600px;
+        gap: 25px;
+    }
+    
+    .update-btn,
+    .signout-btn {
+        padding: 20px 45px;
+        font-size: 1.1rem;
+    }
+}
