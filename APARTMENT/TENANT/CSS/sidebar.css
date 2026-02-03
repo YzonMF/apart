@@ -1,0 +1,141 @@
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #000;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    width: auto;
+    padding: 0;
+  }
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  width: 44px;
+  height: 44px;
+  background: #000;
+  color: #f5b400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid #f5b400;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .menu-btn {
+    margin-bottom: 15px;
+  }
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-height: none;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .menu-items {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  #menu-toggle:checked ~ .sidebar .menu-items {
+    max-height: 500px;
+  }
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000;
+  border: 1.5px solid #f5b400;
+  color: #f5b400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.icon-btn.active {
+  background: #f5b400;
+  color: #000;
+}
+
+.icon-btn:hover:not(.active) {
+  background: rgba(245, 180, 0, 0.1);
+}
+
+.icon-btn::after {
+  content: attr(title);
+  position: absolute;
+  top: 50%;
+  left: 55px;
+  transform: translateY(-50%);
+  background: #000;
+  color: #f5b400;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  border: 1px solid #f5b400;
+}
+
+@media (min-width: 768px) {
+  .icon-btn:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+  
+  .menu-items {
+    gap: 8px;
+  }
+  
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-items {
+    display: none;
+  }
+  
+  #menu-toggle:checked ~ .sidebar .menu-items {
+    display: flex;
+  }
+}

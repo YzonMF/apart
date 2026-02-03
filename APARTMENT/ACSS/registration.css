@@ -1,0 +1,182 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000; /* Black background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.register-wrapper {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Icon section */
+.icon-section {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffc107; /* Warning yellow */
+}
+
+.icon-section p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-section i {
+    font-size: 80px;
+    color: #ffc107; /* Warning yellow */
+    opacity: 0.9;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Registration container */
+.registrationcontainer {
+    background: #1a1a1a; /* Dark gray for contrast on black */
+    border-radius: 15px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333333;
+}
+
+/* Messages */
+.error-message {
+    color: #ff3860;
+    background-color: #331c1f;
+    border: 1px solid #ff3860;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.success-message {
+    color: #23d160;
+    background-color: #1a2f24;
+    border: 1px solid #23d160;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Form elements */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ffc107; /* Warning yellow */
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ff9800; /* Orange border */
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ffc107; /* Warning yellow on focus */
+    background-color: #333333;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+/* Submit button */
+.submitbtn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%); /* Orange to yellow gradient */
+    color: #000000; /* Black text */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.submitbtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+}
+
+.submitbtn:active {
+    transform: translateY(0);
+}
+
+/* Login link */
+.login {
+    text-align: center;
+    margin-top: 25px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.login a {
+    color: #ffc107; /* Warning yellow */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login a:hover {
+    color: #ff9800; /* Orange on hover */
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .registrationcontainer {
+        padding: 30px 25px;
+    }
+    
+    .icon-section p {
+        font-size: 20px;
+    }
+    
+    .icon-section i {
+        font-size: 60px;
+    }
+    
+    .input-group input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .submitbtn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

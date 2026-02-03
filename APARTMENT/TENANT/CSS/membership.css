@@ -1,0 +1,84 @@
+.amenities-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+.amenities-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+.amenity-item {
+background: #f8f9fa;
+padding: 15px;
+border-radius: 8px;
+border-left: 4px solid #f5b400;
+display: flex;
+align-items: center;
+}
+
+.amenity-item i {
+color: #f5b400;
+font-size: 20px;
+margin-right: 10px;
+}
+
+.amenity-item span {
+color: #333;
+font-weight: 500;
+}
+
+.documents-list {
+margin-top: 15px;
+}
+
+.document-item {
+background: #f8f9fa;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+border-left: 4px solid #f5b400;
+}
+
+.document-item i {
+color: #f5b400;
+font-size: 24px;
+margin-right: 15px;
+}
+
+.document-item div {
+flex: 1;
+}
+
+.document-item h4 {
+color: #f5b400;
+margin-bottom: 5px;
+font-size: 16px;
+}
+
+.document-item p {
+color: #666;
+font-size: 13px;
+}
+
+.view-btn {
+background: #f5b400;
+color: #000;
+padding: 8px 15px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: 600;
+font-size: 14px;
+transition: all 0.3s;
+}
+
+.view-btn:hover {
+background: #000;
+color: #f5b400;
+}
+

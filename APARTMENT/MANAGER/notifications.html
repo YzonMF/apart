@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="MCSS/sidebar.css">
+    <link rel="stylesheet" href="MCSS/notifications.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="menu-items">
+                <a href="managerdashboard.html" class="icon-btn" title="Dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                </a>
+                <a href="profile.html" class="icon-btn" title="Profile">
+                    <i class="fa-solid fa-user-circle"></i>
+                </a>
+                <a href="floor.html" class="icon-btn" title="Properties">
+                    <i class="fa-solid fa-building"></i>
+                </a>
+                <a href="payments.html" class="icon-btn" title="Payments">
+                    <i class="fa-solid fa-credit-card"></i>
+                </a>
+                <a href="notifications.html" class="icon-btn active" title="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                </a>
+                <a href="reports.html" class="icon-btn" title="Reports">
+                    <i class="fa-solid fa-chart-bar"></i>
+                </a>
+                <a href="tenants.html" class="icon-btn" title="Tenants">
+                    <i class="fa-solid fa-users"></i>
+                </a>
+                <a href="settings.html" class="icon-btn" title="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="../index.html" class="icon-btn" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        </aside>
+
+        <div class="content">
+            <div class="notifications-container">
+                <h1 class="page-title"><i class="fa-solid fa-bell"></i> Notifications</h1>
+                
+                <div class="notification-actions">
+                    <button class="btn-primary">
+                        <i class="fa-solid fa-plus"></i> New Notification
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fa-solid fa-trash"></i> Clear All
+                    </button>
+                </div>
+
+                <div class="notifications-grid">
+                    <div class="notification-section">
+                        <h2><i class="fa-solid fa-envelope"></i> New Notifications (3)</h2>
+                        
+                        <div class="notification-card unread">
+                            <div class="notification-header">
+                                <span class="notification-type payment"><i class="fa-solid fa-money-bill"></i> Payment</span>
+                                <span class="notification-time">Just now</span>
+                            </div>
+                            <h3>Payment Received from John Smith</h3>
+                            <p>January rent of $1,200 has been received for Unit Bldg A-305</p>
+                            <div class="notification-actions">
+                                <button class="btn-small"><i class="fa-solid fa-check"></i> Mark Read</button>
+                                <button class="btn-small"><i class="fa-solid fa-envelope"></i> Send Receipt</button>
+                            </div>
+                        </div>
+
+                        <div class="notification-card unread">
+                            <div class="notification-header">
+                                <span class="notification-type maintenance"><i class="fa-solid fa-tools"></i> Maintenance</span>
+                                <span class="notification-time">30 minutes ago</span>
+                            </div>
+                            <h3>Maintenance Request Submitted</h3>
+                            <p>Plumbing issue reported in Building C, Room 412</p>
+                            <div class="notification-actions">
+                                <button class="btn-small"><i class="fa-solid fa-check"></i> Mark Read</button>
+                                <button class="btn-small"><i class="fa-solid fa-eye"></i> View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="notification-card unread">
+                            <div class="notification-header">
+                                <span class="notification-type alert"><i class="fa-solid fa-exclamation-triangle"></i> Alert</span>
+                                <span class="notification-time">2 hours ago</span>
+                            </div>
+                            <h3>3 Overdue Payments</h3>
+                            <p>There are 3 tenants with overdue payments for December rent</p>
+                            <div class="notification-actions">
+                                <button class="btn-small"><i class="fa-solid fa-check"></i> Mark Read</button>
+                                <button class="btn-small"><i class="fa-solid fa-envelope"></i> Send Reminder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification-section">
+                        <h2><i class="fa-solid fa-clock-rotate-left"></i> Recent Notifications</h2>
+                        
+                        <div class="notification-card">
+                            <div class="notification-header">
+                                <span class="notification-type tenant"><i class="fa-solid fa-user-plus"></i> Tenant</span>
+                                <span class="notification-time">Yesterday</span>
+                            </div>
+                            <h3>New Tenant Registration</h3>
+                            <p>Emma Davis has completed registration for Unit Bldg A-102</p>
+                        </div>
+
+                        <div class="notification-card">
+                            <div class="notification-header">
+                                <span class="notification-type system"><i class="fa-solid fa-gear"></i> System</span>
+                                <span class="notification-time">Jan 28, 2024</span>
+                            </div>
+                            <h3>Monthly Report Generated</h3>
+                            <p>January financial report has been automatically generated</p>
+                        </div>
+
+                        <div class="notification-card">
+                            <div class="notification-header">
+                                <span class="notification-type maintenance"><i class="fa-solid fa-tools"></i> Maintenance</span>
+                                <span class="notification-time">Jan 26, 2024</span>
+                            </div>
+                            <h3>Maintenance Completed</h3>
+                            <p>Air conditioning repair in Building B has been completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="send-notification">
+                    <h2><i class="fa-solid fa-paper-plane"></i> Send Notification</h2>
+                    <div class="notification-form">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-heading"></i> Title</label>
+                            <input type="text" placeholder="Notification title">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-align-left"></i> Message</label>
+                            <textarea placeholder="Notification message..." rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-users"></i> Recipients</label>
+                            <select>
+                                <option>All Tenants</option>
+                                <option>Specific Building</option>
+                                <option>Overdue Tenants</option>
+                            </select>
+                        </div>
+                        <button class="btn-send">
+                            <i class="fa-solid fa-paper-plane"></i> Send Notification
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
