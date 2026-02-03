@@ -1,0 +1,32 @@
+    .notification-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-left: 4px solid #f5b400;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    }
+
+    .notification-item h4 {
+    color: #f5b400;
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    }
+
+    .notification-item h4 i {
+    margin-right: 8px;
+    }
+
+    .notification-item p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 5px;
+    }
+
+    .notification-item .date {
+    color: #999;
+    font-size: 11px;
+    }
+
+
