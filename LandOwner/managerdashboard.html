@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manager Dashboard - Property Management</title>
+  <title>Land Owner Dashboard - Property Management</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="MCSS/dashboard.css">
   <link rel="stylesheet" href="MCSS/sidebar.css">
 </head>
@@ -35,15 +34,12 @@
         <a href="reports.html" class="icon-btn" title="Reports">
           <i class="fa-solid fa-chart-bar"></i>
         </a>
-        <a href="tenants.html" class="icon-btn" title="Tenants">
-          <i class="fa-solid fa-users"></i>
-        </a>
         <a href="settings.html" class="icon-btn" title="Settings">
           <i class="fa-solid fa-gear"></i>
         </a>
         <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
       </div>
     </aside>
 
@@ -53,7 +49,7 @@
 
           <div class="user-info">
             <div class="user-details">
-              <h4>John Doe</h4>
+              <h4>JOE</h4>
               <p>Property Manager</p>
             </div>
             <div class="user-avatar">JD</div>
@@ -61,7 +57,7 @@
 
           <div class="header">
             <h1>
-              <i class="bi bi-building"></i>
+              <i class="fa-solid fa-building"></i>
               Manager Dashboard
             </h1>
             <p>Property Management Overview & Controls</p>
@@ -69,25 +65,29 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-building"></i></div>
-              <div class="stat-value">24</div>
-              <span class="stat-label">Properties Managed</span>
+              <div class="stat-icon"><i class="fa fa-building"></i></div>
+              <div class="stat-value">20</div>
+              <span class="stat-label">Total Rooms</span>
             </div>
 
             <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-people"></i></div>
-              <div class="stat-value">68</div>
+              <div class="stat-icon"><i class="fa fa-building"></i></div>
+              <div class="stat-value">10</div>
+              <span class="stat-label">Occupied Rooms</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa fa-building"></i></div>
+              <div class="stat-value">10</div>
+              <span class="stat-label">Vacant Rooms</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="stat-value">10</div>
               <span class="stat-label">Active Tenants</span>
             </div>
 
             <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-cash-stack"></i></div>
-              <div class="stat-value">$42,580</div>
-              <span class="stat-label">Monthly Revenue</span>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-exclamation-triangle"></i></div>
+              <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
               <div class="stat-value">7</div>
               <span class="stat-label">Pending Issues</span>
             </div>
@@ -95,31 +95,31 @@
 
           <section class="section">
             <div class="section-header">
-              <i class="bi bi-house-door"></i>
+              <i class="fa-solid fa-house"></i>
               <h2>Property & Room Management</h2>
             </div>
 
             <div class="feature-grid">
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-building"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
                 <h4>Building Details</h4>
                 <p>Add or edit building information and specifications</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-door-open"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-door-open"></i></div>
                 <h4>Room Details</h4>
                 <p>Manage room information and availability</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-plus-circle"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-circle-plus"></i></div>
                 <h4>Room Creation</h4>
                 <p>Create rooms with unique invitation codes</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-clipboard-check"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
                 <h4>Occupancy Status</h4>
                 <p>Track room occupancy and tenant assignments</p>
               </div>
@@ -128,61 +128,49 @@
 
           <section class="section">
             <div class="section-header">
-              <i class="bi bi-cash-coin"></i>
-              <h2>Payment & Financial Management</h2>
+              <i class="fa-solid fa-coins"></i>
+              <h2>Transactional Management</h2>
             </div>
 
             <div class="feature-grid">
-              <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-receipt"></i></div>
+              <div class="feature-item" >
+                <div class="feature-icon"><i class="fa-solid fa-receipt"></i></div>
                 <h4>Record Payments</h4>
                 <p>Track tenant payments with full records</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-arrow-left-right"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
                 <h4>Handle Refunds</h4>
                 <p>Process refunds with proper documentation</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-receipt-cutoff"></i></div>
+                <div class="feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
                 <h4>Send Receipts</h4>
-                <p>Automatically email payment receipts</p>
+                <p>Email Transactional receipts</p>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon"><i class="bi bi-file-earmark-text"></i></div>
-                <h4>Financial Reports</h4>
-                <p>Generate financial statements and summaries</p>
+                <div class="feature-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h4>Transactional Reports</h4>
+                <p>Generate Transactional statements and summaries</p>
               </div>
             </div>
           </section>
 
           <section class="section">
             <div class="section-header">
-              <i class="bi bi-bell"></i>
+              <i class="fa-solid fa-bell"></i>
               <h2>Recent Notifications</h2>
             </div>
 
-            <div class="notification-item">
-              <h4>Payment Received</h4>
-              <p>Sarah Johnson paid January rent of $1,250</p>
-              <span class="notification-date">Today, 10:30 AM</span>
-            </div>
-
-            <div class="notification-item">
-              <h4>Maintenance Request</h4>
-              <p>Plumbing issue reported in Building C, Room 12</p>
-              <span class="notification-date">Yesterday</span>
-            </div>
           </section>
 
           <div class="quick-actions">
-            <a href="#" class="action-btn"><i class="bi bi-building-add"></i> Add Property</a>
-            <a href="#" class="action-btn"><i class="bi bi-file-earmark-text"></i> Generate Report</a>
-            <a href="#" class="action-btn"><i class="bi bi-bell"></i> Send Notification</a>
-            <a href="#" class="action-btn"><i class="bi bi-person-plus"></i> Add Tenant</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-file-lines"></i> Generate Report</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-bell"></i> Send Notification</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-user-plus"></i> Add Tenant</a>
           </div>
 
         </div>

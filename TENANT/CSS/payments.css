@@ -1,24 +1,151 @@
 .table-container {
-overflow-x: auto;
-margin-top: 15px;
-border: 1px solid #eee;
-border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 15px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
 }
 
 .payment-table {
-width: 100%;
-border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
 }
 
 .payment-table th {
-background: #f5b400;
-color: #000;
-padding: 12px;
-text-align: left;
+    background: var(--accent-color);
+    color: var(--dark-bg);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .payment-table td {
-padding: 12px;
-border-bottom: 1px solid #eee;
+    padding: 15px;
+    border-bottom: 2px solid var(--medium-gray);
+    color: var(--dark-gray);
+    font-size: 14px;
 }
 
+.payment-table tr:hover {
+    background: rgba(245, 180, 0, 0.05);
+}
+
+.payment-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Payment methods */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-method {
+    background: var(--white);
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-method:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.payment-method.active {
+    border-color: var(--accent-color);
+    background: rgba(245, 180, 0, 0.1);
+}
+
+.payment-method i {
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.payment-method span {
+    display: block;
+    color: var(--dark-gray);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Payment amount */
+.payment-amount {
+    font-size: 36px;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Due date warning */
+.due-date-warning {
+    background: rgba(255, 193, 7, 0.15);
+    border: 2px solid var(--status-pending);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.due-date-warning i {
+    color: var(--status-pending);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.due-date-warning h4 {
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.due-date-warning p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* User info section */
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-gray);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.user-details h4 {
+    color: var(--dark-gray);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.user-details p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--dark-bg);
+    font-size: 18px;
+}

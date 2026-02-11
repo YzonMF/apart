@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Land Owner Approvals - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Acss/approval.css">
+  <link rel="stylesheet" href="Acss/sidebar.css">
+  
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="admin.html" class="icon-btn" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="approval.html" class="icon-btn active" title="Land Owner Approvals">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="badge">5</span>
+        </a>
+        <a href="accounts.html" class="icon-btn" title="Manage Accounts">
+          <i class="fa-solid fa-users-gear"></i>
+        </a>
+        <a href="security.html" class="icon-btn" title="Security & Data">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="maintenance.html" class="icon-btn" title="System Maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </a>
+        <a href="logs.html" class="icon-btn" title="Activity Logs">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </a>
+        <a href="settings.html" class="icon-btn" title="Admin Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <div class="container">
+
+          <div class="user-info">
+            <div class="user-details">
+              <h4>LAND OWNER APPROVALS</h4>
+              <p>Review and approve land owner registrations</p>
+            </div>
+            <div class="user-avatar">LO</div>
+          </div>
+
+          <div class="header">
+            <h1>
+              <i class="fa-solid fa-user-check"></i>
+              Land Owner Registration Approvals
+            </h1>
+            <p>Review LGU permits and approve/decline land owner applications</p>
+          </div>
+
+          <div class="approval-filters">
+            <div class="filter-tabs">
+              <a href="#all" class="filter-tab active">All Applications (12)</a>
+              <a href="#pending" class="filter-tab">Pending Review (5)</a>
+              <a href="#approved" class="filter-tab">Approved (4)</a>
+              <a href="#declined" class="filter-tab">Declined (3)</a>
+            </div>
+            
+            <div class="filter-controls">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search by name, business, or permit number">
+              </div>
+              <select class="filter-select">
+                <option>Sort by: Newest First</option>
+                <option>Sort by: Oldest First</option>
+                <option>Sort by: Business Name</option>
+              </select>
+            </div>
+          </div>
+
+          <section class="pending">
+            <div class="section-header">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <h2>Pending Applications (5)</h2>
+            </div>
+
+            <div class="approval-cards">
+              <div class="approval-card pending">
+                <div class="approval-card-header">
+                  <div class="applicant-info">
+                    <div class="user-avatar-small">MJ</div>
+                    <div>
+                      <h4>Michael Jackson</h4>
+                      <p>mjackson@email.com • Applied 2 days ago</p>
+                    </div>
+                  </div>
+                  <span class="status-badge pending">Pending Review</span>
+                </div>
+                
+                <div class="approval-card-content">
+                  <div class="application-details">
+                    <div class="detail-item">
+                      <span class="detail-label">Business Name:</span>
+                      <span class="detail-value">MJ Properties</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Permit Number:</span>
+                      <span class="detail-value permit-number">BP-2023-789012</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Address:</span>
+                      <span class="detail-value">123 Kalonglong,Samoki, Bontoc</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Property Type:</span>
+                      <span class="detail-value">Residential Apartments</span>
+                    </div>
+                  </div>
+                  
+                  <div class="permit-verification">
+                    <h5><i class="fa-solid fa-file-contract"></i> LGU Permit Verification</h5>
+                    <div class="verification-status">
+                      <span class="verification-item">
+                        <i class="fa-solid fa-check-circle success"></i>
+                        Permit number validated
+                      </span>
+                      <span class="verification-item">
+                        <i class="fa-solid fa-clock warning"></i>
+                        Business registration pending
+                      </span>
+                      <span class="verification-item">
+                        <i class="fa-solid fa-check-circle success"></i>
+                        Tax clearance verified
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="approval-actions">
+                    <a href="#" class="btn-view-details"><i class="fa-solid fa-eye"></i> View Full Application</a>
+                    <div class="decision-buttons">
+                      <a href="#" class="btn-approve-large"><i class="fa-solid fa-check"></i> Approve Application</a>
+                      <a href="#" class="btn-decline-large"><i class="fa-solid fa-xmark"></i> Decline Application</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="approval-card pending">
+                <div class="approval-card-header">
+                  <div class="applicant-info">
+                    <div class="user-avatar-small">SR</div>
+                    <div>
+                      <h4>Sarah Duterte</h4>
+                      <p>sr@email.com • Applied 1 day ago</p>
+                    </div>
+                  </div>
+                  <span class="status-badge pending">Pending Review</span>
+                </div>
+                
+                <div class="approval-card-content">
+                  <div class="application-details">
+                    <div class="detail-item">
+                      <span class="detail-label">Business Name:</span>
+                      <span class="detail-value">Urban Living Spaces</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Permit Number:</span>
+                      <span class="detail-value permit-number">BP-2024-345678</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Address:</span>
+                      <span class="detail-value">456 Caluttit, Bontoc</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Property Type:</span>
+                      <span class="detail-value">Commercial & Residential</span>
+                    </div>
+                  </div>
+                  
+                  <div class="permit-verification">
+                    <h5><i class="fa-solid fa-file-contract"></i> LGU Permit Verification</h5>
+                    <div class="verification-status">
+                      <span class="verification-item">
+                        <i class="fa-solid fa-exclamation-circle danger"></i>
+                        Permit number validation failed
+                      </span>
+                      <span class="verification-item">
+                        <i class="fa-solid fa-clock warning"></i>
+                        Business registration pending
+                      </span>
+                      <span class="verification-item">
+                        <i class="fa-solid fa-clock warning"></i>
+                        Tax clearance pending
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="approval-actions">
+                    <a href="#" class="btn-view-details"><i class="fa-solid fa-eye"></i> View Full Application</a>
+                    <div class="decision-buttons">
+                      <a href="#" class="btn-approve-large"><i class="fa-solid fa-check"></i> Approve Application</a>
+                      <a href="#" class="btn-decline-large"><i class="fa-solid fa-xmark"></i> Decline Application</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-clipboard-check"></i>
+              <h2>Approved Applications (4)</h2>
+            </div>
+
+            <div class="approval-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Applicant</th>
+                    <th>Business</th>
+                    <th>Approved By</th>
+                    <th>Approved On</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-small">RK</div>
+                        <div>
+                          <strong>Robin Kim</strong>
+                          <small>rkim@email.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Kim Real Estate</td>
+                    <td>Admin User</td>
+                    <td>2024-03-15</td>
+                    <td><span class="status success">Active</span></td>
+                    <td>
+                      <a href="#" class="btn-view"><i class="fa-solid fa-eye"></i> View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-small">LS</div>
+                        <div>
+                          <strong>Lisa Monalisa</strong>
+                          <small>lisa@email.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Monalisa Properties</td>
+                    <td>Admin User</td>
+                    <td>2024-03-10</td>
+                    <td><span class="status success">Active</span></td>
+                    <td>
+                      <a href="#" class="btn-view"><i class="fa-solid fa-eye"></i> View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-ban"></i>
+              <h2>Declined Applications (3)</h2>
+            </div>
+
+            <div class="approval-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Applicant</th>
+                    <th>Business</th>
+                    <th>Declined By</th>
+                    <th>Declined On</th>
+                    <th>Reason</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-small">TW</div>
+                        <div>
+                          <strong>Dagus Wilson</strong>
+                          <small>wilsonhotdog@email.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Wilson Holdings</td>
+                    <td>Admin User</td>
+                    <td>2024-03-12</td>
+                    <td>Invalid permit documentation</td>
+                    <td>
+                      <a href="#" class="btn-view"><i class="fa-solid fa-eye"></i> View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <div class="quick-actions">
+            <a href="#" class="action-btn"><i class="fa-solid fa-download"></i> Export Approvals Report</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-gear"></i> Approval Settings</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-question-circle"></i> Approval Guidelines</a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

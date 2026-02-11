@@ -89,7 +89,8 @@ body {
     font-size: 14px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #ff9800; /* Orange border */
@@ -100,7 +101,8 @@ body {
     color: #ffffff;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group select:focus {
     outline: none;
     border-color: #ffc107; /* Warning yellow on focus */
     background-color: #333333;
@@ -109,6 +111,92 @@ body {
 
 .input-group input::placeholder {
     color: #999;
+}
+
+/* Role Selection Styles */
+.role-container {
+    margin-bottom: 25px;
+}
+
+.role-label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #ffc107;
+    font-size: 14px;
+}
+
+.role-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.role-option {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.role-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.role-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 15px;
+    border: 2px solid #ff9800;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #2d2d2d;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.role-option input[type="radio"]:checked + span {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    color: #000000;
+    border-color: #ffc107;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.role-option:hover span {
+    border-color: #ffc107;
+    background-color: #383838;
+}
+
+.role-option input[type="radio"]:checked:hover + span {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    transform: translateY(-2px);
+}
+
+/* Hide/Show fields based on role selection - CSS ONLY */
+/* Initially hide both role-specific sections */
+.tenant-fields,
+.landowner-fields {
+    display: none;
+}
+
+/* Show tenant fields when tenant radio is checked */
+#role-tenant:checked ~ .tenant-fields,
+form:has(#role-tenant:checked) .tenant-fields {
+    display: block;
+}
+
+/* Show landowner fields when landowner radio is checked */
+#role-landowner:checked ~ .landowner-fields,
+form:has(#role-landowner:checked) .landowner-fields {
+    display: block;
 }
 
 /* Submit button */
@@ -170,9 +258,15 @@ body {
         font-size: 60px;
     }
     
-    .input-group input {
+    .input-group input,
+    .input-group select {
         font-size: 14px;
         padding: 10px 12px;
+    }
+
+    .role-selection {
+        flex-direction: column;
+        gap: 10px;
     }
     
     .submitbtn {

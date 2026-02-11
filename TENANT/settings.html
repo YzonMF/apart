@@ -12,114 +12,164 @@
 
 <body>
 <div class="app">
-  <input type="checkbox" id="menu-toggle">
-
-  <div class="sidebar">
-    <label for="menu-toggle" class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-
+  <aside class="sidebar">
     <div class="menu-items">
       <a href="dashboard.html" class="icon-btn" title="Dashboard">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-chart-line"></i>
       </a>
       <a href="membership.html" class="icon-btn" title="My Room">
-        <i class="fa-solid fa-id-card"></i>
+        <i class="fa-solid fa-building"></i>
       </a>
       <a href="payments.html" class="icon-btn" title="Payments">
         <i class="fa-solid fa-credit-card"></i>
+      </a>
+      <a href="maintenance.html" class="icon-btn" title="Maintenance">
+        <i class="fa-solid fa-tools"></i>
       </a>
       <a href="notifications.html" class="icon-btn" title="Notifications">
         <i class="fa-solid fa-bell"></i>
       </a>
       <a href="profile.html" class="icon-btn" title="Profile">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user-circle"></i>
       </a>
       <a href="settings.html" class="icon-btn active" title="Settings">
         <i class="fa-solid fa-gear"></i>
       </a>
       <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
     </div>
-  </div>
+  </aside>
 
-  <!-- CONTENT -->
-  <div class="content tenant-content">
-    <div class="container">
-      <div class="header">
-        <h1><i class="bi bi-gear"></i> Account Settings</h1>
-        <p>Customize your portal preferences</p>
-      </div>
+  <main class="content">
+    <div class="content-inner">
+      <div class="container">
 
-      <div class="info-section">
-        <h2><i class="bi bi-person-gear"></i> Account Settings</h2>
-        
-        <div class="form-group">
-          <label>Language Preference</label>
-          <select style="width: 100%; padding: 10px; border: 2px solid #eee; border-radius: 5px;">
-            <option selected>English</option>
-            <option>Filipino</option>
-            <option>Spanish</option>
-          </select>
+        <div class="header">
+          <h1><i class="bi bi-gear"></i> Account Settings</h1>
+          <p>Customize your portal preferences and security settings</p>
         </div>
-        
-        <div class="form-group">
-          <label>Time Zone</label>
-          <select style="width: 100%; padding: 10px; border: 2px solid #eee; border-radius: 5px;">
-            <option selected>Philippine Time (UTC+8)</option>
-            <option>Pacific Time (UTC-8)</option>
-          </select>
-        </div>
-        
-        <a href="#" class="action-btn" style="display: block; text-align: center;">
-          <i class="bi bi-check-circle"></i> Save Settings
-        </a>
-      </div>
 
-      <div class="info-section">
-        <h2><i class="bi bi-bell"></i> Notification Preferences</h2>
-        
-        <div class="setting-item">
-          <span>Payment Notifications</span>
-          <input type="checkbox" checked style="transform: scale(1.2);">
-        </div>
-        
-        <div class="setting-item">
-          <span>Maintenance Updates</span>
-          <input type="checkbox" checked style="transform: scale(1.2);">
-        </div>
-        
-        <div class="setting-item">
-          <span>Building Announcements</span>
-          <input type="checkbox" checked style="transform: scale(1.2);">
-        </div>
-        
-        <div class="setting-item">
-          <span>Email Notifications</span>
-          <input type="checkbox" style="transform: scale(1.2);">
-        </div>
-      </div>
+        <div class="settings-grid">
+          
+          <div class="settings-section">
+            <h2><i class="bi bi-person-gear"></i> Account Settings</h2>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Language Preference</h4>
+                <p>Select your preferred language</p>
+              </div>
+              <select style="padding: 8px 12px; border: 2px solid var(--medium-gray); border-radius: 5px;">
+                <option selected>English</option>
+                <option>Filipino</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Time Zone</h4>
+                <p>Set your local time zone</p>
+              </div>
+              <select style="padding: 8px 12px; border: 2px solid var(--medium-gray); border-radius: 5px;">
+                <option selected>Philippine Time (UTC+8)</option>
+                <option>Pacific Time (UTC-8)</option>
+              </select>
+            </div>
+          </div>
 
-      <div class="info-section">
-        <h2><i class="bi bi-shield-check"></i> Security</h2>
-        
-        <div class="security-item">
-          <p><strong>Last Login:</strong> Today, 9:00 AM</p>
-          <p><strong>Session:</strong> Windows Desktop • Chrome</p>
+          <div class="settings-section">
+            <h2><i class="bi bi-bell"></i> Notification Preferences</h2>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Payment Notifications</h4>
+                <p>Receive alerts for payment due dates</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Maintenance Updates</h4>
+                <p>Get updates on maintenance requests</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Building Announcements</h4>
+                <p>Important building-wide announcements</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Email Notifications</h4>
+                <p>Receive notifications via email</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
         </div>
-        
+
+        <div class="settings-section">
+          <h2><i class="bi bi-shield-check"></i> Security</h2>
+          
+          <div class="security-item">
+            <h4>Account Activity</h4>
+            <p><strong>Last Login:</strong> Today, 9:00 AM</p>
+            <p><strong>Device:</strong> Windows Desktop • Chrome</p>
+            <p><strong>IP Address:</strong> 192.168.1.100</p>
+            <span class="security-status secure">Secure</span>
+          </div>
+
+        <div class="settings-section">
+          <h2><i class="bi bi-palette"></i> Theme Options</h2>
+          
+          <div class="theme-options">
+            <div class="theme-option active">
+              <i class="bi bi-moon-stars"></i>
+              <span>Dark Mode</span>
+            </div>
+            <div class="theme-option">
+              <i class="bi bi-sun"></i>
+              <span>Light Mode</span>
+            </div>
+            <div class="theme-option">
+              <i class="bi bi-display"></i>
+              <span>System</span>
+            </div>
+          </div>
+        </div>
+
         <div class="quick-actions">
+          <a href="#" class="action-btn">
+            <i class="bi bi-check-circle"></i> Save All Settings
+          </a>
           <a href="#" class="action-btn">
             <i class="bi bi-key"></i> Change Password
           </a>
         </div>
+
       </div>
-
     </div>
-  </div>
+  </main>
 </div>
-
-
 </body>
 </html>

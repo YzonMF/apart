@@ -1,148 +1,119 @@
-
 .sidebar {
+  width: 80px;
+  background: var(--dark-bg);
+  border-right: 2px solid var(--accent-color);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background: #000;
-  z-index: 10;
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    left: 30px;
-    top: 30px;
-    width: auto;
-    padding: 0;
-  }
-}
-
-/* Menu Toggle Checkbox (Hidden) */
-#menu-toggle {
-  display: none;
-}
-
-/* Menu Button (Hamburger) */
-.menu-btn {
-  width: 44px;
-  height: 44px;
-  background: #000;
-  color: #f5b400;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1.5px solid #f5b400;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  height: 100vh;
 }
 
-@media (min-width: 768px) {
-  .menu-btn {
-    margin-bottom: 15px;
-  }
-}
-
-/* Menu Items Container */
 .menu-items {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  max-height: none;
-  overflow: visible;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
 }
 
-@media (min-width: 768px) {
-  .menu-items {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    max-height: 0;
-    overflow: hidden;
-  }
-  
-  #menu-toggle:checked ~ .sidebar .menu-items {
-    max-height: 500px;
-  }
-}
-
-/* Icon Buttons */
 .icon-btn {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: #000;
-  border: 1.5px solid #f5b400;
-  color: #f5b400;
+  background: var(--dark-bg);
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .icon-btn.active {
-  background: #f5b400;
-  color: #000;
+  background: var(--accent-color);
+  color: var(--dark-bg);
+  border-color: var(--accent-color);
 }
 
 .icon-btn:hover:not(.active) {
   background: rgba(245, 180, 0, 0.1);
+  transform: translateY(-2px);
 }
 
-/* Tooltip for Icon Buttons */
+.icon-btn i {
+  font-size: 20px;
+}
+
 .icon-btn::after {
   content: attr(title);
   position: absolute;
+  left: 65px;
   top: 50%;
-  left: 55px;
   transform: translateY(-50%);
-  background: #000;
-  color: #f5b400;
-  padding: 6px 10px;
+  background: var(--dark-bg);
+  color: var(--accent-color);
+  padding: 8px 12px;
   border-radius: 4px;
-  font-size: 12px;
-  opacity: 0;
+  font-size: 13px;
+  font-weight: 500;
   white-space: nowrap;
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 100;
-  border: 1px solid #f5b400;
+  border: 1px solid var(--accent-color);
+  z-index: 1000;
 }
 
-@media (min-width: 768px) {
-  .icon-btn:hover::after {
-    opacity: 1;
-  }
+.icon-btn:hover::after {
+  opacity: 1;
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .sidebar {
-    padding: 10px;
-  }
-  
-  .menu-items {
-    gap: 8px;
+      width: 60px;
   }
   
   .icon-btn {
-    width: 40px;
-    height: 40px;
+      width: 45px;
+      height: 45px;
+  }
+  
+  .icon-btn i {
+      font-size: 18px;
+  }
+  
+  .icon-btn::after {
+      left: 55px;
+      font-size: 12px;
+      padding: 6px 10px;
   }
 }
 
-/* Mobile menu toggle fix */
-@media (max-width: 767px) {
-  .menu-items {
-    display: none;
+@media (max-width: 480px) {
+  .sidebar {
+      width: 50px;
   }
   
-  #menu-toggle:checked ~ .sidebar .menu-items {
-    display: flex;
+  .icon-btn {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .icon-btn i {
+      font-size: 16px;
+  }
+  
+  .icon-btn::after {
+      display: none;
   }
 }

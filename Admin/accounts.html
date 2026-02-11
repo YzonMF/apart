@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Management - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Acss/sidebar.css">
+  <link rel="stylesheet" href="Acss/accounts.css">
+
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="admin.html" class="icon-btn" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="approval.html" class="icon-btn" title="Land Owner Approvals">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="badge">5</span>
+        </a>
+        <a href="accounts.html" class="icon-btn active" title="Manage Accounts">
+          <i class="fa-solid fa-users-gear"></i>
+        </a>
+        <a href="security.html" class="icon-btn" title="Security & Data">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="maintenance.html" class="icon-btn" title="System Maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </a>
+        <a href="logs.html" class="icon-btn" title="Activity Logs">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </a>
+        <a href="settings.html" class="icon-btn" title="Admin Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <div class="container">
+
+          <div class="user-info">
+            <div class="user-details">
+              <h4>ACCOUNT MANAGEMENT</h4>
+              <p>Manage all user accounts in the system</p>
+            </div>
+            <div class="user-avatar">AM</div>
+          </div>
+
+          <div class="header">
+            <h1>
+              <i class="fa-solid fa-users-gear"></i>
+              User Account Management
+            </h1>
+            <p>Create, edit, and manage user accounts across all roles</p>
+          </div>
+
+          <div class="accounts-header">
+            <div>
+              <h2>All User Accounts</h2>
+              <p>Total 127 active users across all roles</p>
+            </div>
+            <div class="account-actions">
+              <a href="#" class="action-btn" id="showCreateForm">
+                <i class="fa-solid fa-user-plus"></i> Create New Account
+              </a>
+              <a href="#" class="action-btn">
+                <i class="fa-solid fa-download"></i> Export Users
+              </a>
+            </div>
+          </div>
+
+          <div class="account-stats">
+            <div class="account-stat-card">
+              <div class="account-stat-value">127</div>
+              <div class="account-stat-label">Total Users</div>
+            </div>
+            <div class="account-stat-card">
+              <div class="account-stat-value">1</div>
+              <div class="account-stat-label">Administrators</div>
+            </div>
+            <div class="account-stat-card">
+              <div class="account-stat-value">12</div>
+              <div class="account-stat-label">Property Managers</div>
+            </div>
+            <div class="account-stat-card">
+              <div class="account-stat-value">42</div>
+              <div class="account-stat-label">Land Owners</div>
+            </div>
+            <div class="account-stat-card">
+              <div class="account-stat-value">68</div>
+              <div class="account-stat-label">Tenants</div>
+            </div>
+          </div>
+
+          <div class="account-filters">
+            <div class="filter-row">
+              <div class="filter-group">
+                <label>Search Users</label>
+                <input type="text" placeholder="Search by name, email, or username">
+              </div>
+              <div class="filter-group">
+                <label>Role Filter</label>
+                <select>
+                  <option>All Roles</option>
+                  <option>Administrator</option>
+                  <option>Property Manager</option>
+                  <option>Land Owner</option>
+                  <option>Tenant</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Status Filter</label>
+                <select>
+                  <option>All Status</option>
+                  <option>Active</option>
+                  <option>Inactive</option>
+                  <option>Suspended</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Sort By</label>
+                <select>
+                  <option>Newest First</option>
+                  <option>Oldest First</option>
+                  <option>Name A-Z</option>
+                  <option>Name Z-A</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-list"></i>
+              <h2>User Accounts List</h2>
+            </div>
+
+            <div class="account-table-container">
+              <table class="account-table">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Joined Date</th>
+                    <th>Last Active</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="account-user">
+                        <div class="account-user-avatar">JD</div>
+                        <div class="account-user-info">
+                          <h5>Joe Joe</h5>
+                          <p>@jjoe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="account-role role-admin">Administrator</span></td>
+                    <td>jJoe@gmail.com</td>
+                    <td>2024-01-15</td>
+                    <td>Today, 09:42 AM</td>
+                    <td><span class="account-status status-active">Active</span></td>
+                    <td>
+                      <div class="account-actions-cell">
+                        <a href="#" class="account-action-btn account-action-edit">
+                          <i class="fa-solid fa-pen"></i> Edit
+                        </a>
+                        <a href="#" class="account-action-btn account-action-reset">
+                          <i class="fa-solid fa-key"></i> Reset
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="account-user">
+                        <div class="account-user-avatar">SR</div>
+                        <div class="account-user-info">
+                          <h5>Sarah Duterte</h5>
+                          <p>@Sduterte</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="account-role role-manager">Property Manager</span></td>
+                    <td>sr@email.com</td>
+                    <td>2024-02-20</td>
+                    <td>Yesterday, 04:15 PM</td>
+                    <td><span class="account-status status-active">Active</span></td>
+                    <td>
+                      <div class="account-actions-cell">
+                        <a href="#" class="account-action-btn account-action-edit">
+                          <i class="fa-solid fa-pen"></i> Edit
+                        </a>
+                        <a href="#" class="account-action-btn account-action-reset">
+                          <i class="fa-solid fa-key"></i> Reset
+                        </a>
+                        <a href="#" class="account-action-btn account-action-suspend">
+                          <i class="fa-solid fa-user-slash"></i> Suspend
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="account-user">
+                        <div class="account-user-avatar">RK</div>
+                        <div class="account-user-info">
+                          <h5>Robin Kim</h5>
+                          <p>@rkim</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="account-role role-owner">Land Owner</span></td>
+                    <td>rkim@email.com</td>
+                    <td>2024-03-15</td>
+                    <td>2 days ago</td>
+                    <td><span class="account-status status-active">Active</span></td>
+                    <td>
+                      <div class="account-actions-cell">
+                        <a href="#" class="account-action-btn account-action-edit">
+                          <i class="fa-solid fa-pen"></i> Edit
+                        </a>
+                        <a href="#" class="account-action-btn account-action-reset">
+                          <i class="fa-solid fa-key"></i> Reset
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="account-user">
+                        <div class="account-user-avatar">TW</div>
+                        <div class="account-user-info">
+                          <h5>Dagus Wilson</h5>
+                          <p>@dwilson</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="account-role role-owner">Land Owner</span></td>
+                    <td>wilsonhotdog@email.com</td>
+                    <td>2024-03-10</td>
+                    <td>1 week ago</td>
+                    <td><span class="account-status status-suspended">Suspended</span></td>
+                    <td>
+                      <div class="account-actions-cell">
+                        <a href="#" class="account-action-btn account-action-edit">
+                          <i class="fa-solid fa-pen"></i> Edit
+                        </a>
+                        <a href="#" class="account-action-btn account-action-reset">
+                          <i class="fa-solid fa-key"></i> Reset
+                        </a>
+                        <a href="#" class="account-action-btn" style="background: rgba(16,185,129,.1); color: #10b981; border: 1px solid rgba(16,185,129,.3);">
+                          <i class="fa-solid fa-user-check"></i> Activate
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="account-user">
+                        <div class="account-user-avatar">MJ</div>
+                        <div class="account-user-info">
+                          <h5>Michael Jackson</h5>
+                          <p>@MJ</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="account-role role-tenant">Tenant</span></td>
+                    <td>mjackson@email.com</td>
+                    <td>2024-02-05</td>
+                    <td>Today, 08:30 AM</td>
+                    <td><span class="account-status status-active">Active</span></td>
+                    <td>
+                      <div class="account-actions-cell">
+                        <a href="#" class="account-action-btn account-action-edit">
+                          <i class="fa-solid fa-pen"></i> Edit
+                        </a>
+                        <a href="#" class="account-action-btn account-action-reset">
+                          <i class="fa-solid fa-key"></i> Reset
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="pagination">
+              <a href="#" class="pagination-btn"><i class="fa-solid fa-chevron-left"></i> Previous</a>
+              <span class="pagination-info">Page 1 of 13</span>
+              <a href="#" class="pagination-btn">Next <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <div class="create-account-form" id="createAccountForm">
+            <h3><i class="fa-solid fa-user-plus"></i> Create New Account</h3>
+            <form>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Full Name *</label>
+                  <input type="text" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address *</label>
+                  <input type="email" required>
+                </div>
+                <div class="form-group">
+                  <label>Username *</label>
+                  <input type="text" required>
+                </div>
+                <div class="form-group">
+                  <label>Password *</label>
+                  <input type="password" required>
+                </div>
+                <div class="form-group">
+                  <label>User Role *</label>
+                  <select required>
+                    <option value="">Select Role</option>
+                    <option value="admin">Administrator</option>
+                    <option value="manager">Property Manager</option>
+                    <option value="owner">Land Owner</option>
+                    <option value="tenant">Tenant</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Account Status</label>
+                  <select>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="pending">Pending Approval</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <a href="#" class="btn-cancel" id="cancelCreate">Cancel</a>
+                <button type="submit" class="btn-create">Create Account</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="quick-actions">
+            <a href="#" class="action-btn"><i class="fa-solid fa-user-slash"></i> Bulk Deactivate</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-envelope"></i> Send Mass Email</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-file-export"></i> Export User Data</a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

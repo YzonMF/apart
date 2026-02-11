@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Logs - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Acss/sidebar.css">
+  <link rel="stylesheet" href="Acss/logs.css">
+
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="admin.html" class="icon-btn" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="approval.html" class="icon-btn" title="Land Owner Approvals">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="badge">5</span>
+        </a>
+        <a href="accounts.html" class="icon-btn" title="Manage Accounts">
+          <i class="fa-solid fa-users-gear"></i>
+        </a>
+        <a href="security.html" class="icon-btn" title="Security & Data">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="maintenance.html" class="icon-btn" title="System Maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </a>
+        <a href="logs.html" class="icon-btn active" title="Activity Logs">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </a>
+        <a href="settings.html" class="icon-btn" title="Admin Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <div class="container">
+
+          <div class="user-info">
+            <div class="user-details">
+              <h4>ACTIVITY LOGS</h4>
+              <p>Monitor all system activities and user actions</p>
+            </div>
+            <div class="user-avatar">AL</div>
+          </div>
+
+          <div class="header">
+            <h1>
+              <i class="fa-solid fa-clipboard-list"></i>
+              System Activity Logs
+            </h1>
+            <p>Track user activities, system events, and security-related actions</p>
+          </div>
+
+          <div class="logs-stats">
+            <div class="log-stat-card">
+              <div class="log-stat-value">12,458</div>
+              <div class="log-stat-label">Total Log Entries</div>
+            </div>
+            <div class="log-stat-card">
+              <div class="log-stat-value">247</div>
+              <div class="log-stat-label">Today's Activities</div>
+            </div>
+            <div class="log-stat-card">
+              <div class="log-stat-value">24</div>
+              <div class="log-stat-label">Active Users Now</div>
+            </div>
+            <div class="log-stat-card">
+              <div class="log-stat-value">8</div>
+              <div class="log-stat-label">Security Alerts</div>
+            </div>
+          </div>
+
+          <div class="logs-filters">
+            <div class="filter-row">
+              <div class="filter-group">
+                <label>Date Range</label>
+                <select>
+                  <option>Last 24 Hours</option>
+                  <option>Last 7 Days</option>
+                  <option>Last 30 Days</option>
+                  <option>Custom Range</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>User Type</label>
+                <select>
+                  <option>All Users</option>
+                  <option>Administrators</option>
+                  <option>Property Managers</option>
+                  <option>Land Owners</option>
+                  <option>Tenants</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Activity Type</label>
+                <select>
+                  <option>All Activities</option>
+                  <option>Login/Logout</option>
+                  <option>User Management</option>
+                  <option>Property Actions</option>
+                  <option>Payment Activities</option>
+                  <option>Security Events</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Severity Level</label>
+                <select>
+                  <option>All Levels</option>
+                  <option>Information</option>
+                  <option>Warning</option>
+                  <option>Critical</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="log-search">
+            <input type="text" placeholder="Search activity logs...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="log-types">
+            <a href="#" class="log-type-btn active">All Activities</a>
+            <a href="#" class="log-type-btn">User Management</a>
+            <a href="#" class="log-type-btn">Property Actions</a>
+            <a href="#" class="log-type-btn">Security Events</a>
+            <a href="#" class="log-type-btn">Payment Activities</a>
+            <a href="#" class="log-type-btn">System Events</a>
+          </div>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-list"></i>
+              <h2>Recent Activities</h2>
+              <span class="section-badge">247 Today</span>
+            </div>
+
+            <div class="logs-container">
+              <div class="log-entry">
+                <div class="log-icon login">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                </div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">User Login Successful</div>
+                    <div class="log-time">Today, 09:42 AM</div>
+                  </div>
+                  <div class="log-description">
+                    Administrator logged in successfully from IP address 192.168.1.100 using Chrome browser.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-user"></i> Admin User
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-location-dot"></i> IP: 192.168.1.100
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-computer"></i> Chrome / Windows
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Details</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon user">
+                  <i class="fa-solid fa-user-pen"></i>
+                </div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">User Account Created</div>
+                    <div class="log-time">Today, 09:15 AM</div>
+                  </div>
+                  <div class="log-description">
+                    New property manager account created for Sarah Rodriguez with email srodriguez@email.com.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-user"></i> Admin User
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-users"></i> Property Manager
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-envelope"></i> srodriguez@email.com
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Details</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon property">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">Property Added</div>
+                    <div class="log-time">Today, 08:45 AM</div>
+                  </div>
+                  <div class="log-description">
+                    New property "Green Valley Estates" added to the system with 20 units.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-user"></i> Robert Kim
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-hashtag"></i> Property ID: PROP-2024-012
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-building"></i> 20 Units
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Details</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon security">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">Failed Login Attempt</div>
+                    <div class="log-time">Today, 08:15 AM</div>
+                  </div>
+
+                  <div class="log-description">
+                    Multiple failed login attempts detected for user 'admin' from IP address 192.168.1.105.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-triangle-exclamation"></i> Security Alert
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-location-dot"></i> IP: 192.168.1.105
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-ban"></i> 3 Failed Attempts
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Investigate</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon system">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">Database Backup Completed</div>
+                    <div class="log-time">Today, 02:30 AM</div>
+                  </div>
+                  <div class="log-description">
+                    Scheduled daily database backup completed successfully. Backup size: 2.4 GB.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-clock"></i> Automated System
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-database"></i> 2.4 GB
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-check"></i> Successful
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Details</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon user">
+                  <i class="fa-solid fa-user-check"></i>
+                </div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <div class="log-title">Land Owner Approved</div>
+                    <div class="log-time">Yesterday, 04:30 PM</div>
+                  </div>
+                  <div class="log-description">
+                    Land owner application for Robin Kim approved with business permit BP-2023-789012.
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-user"></i> Admin User
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-file-contract"></i> BP-2023-789012
+                    </span>
+                    <span class="log-meta-item">
+                      <i class="fa-solid fa-check"></i> Approved
+                    </span>
+                  </div>
+                </div>
+                <div class="log-actions">
+                  <a href="#" class="log-action-btn">Details</a>
+                </div>
+              </div>
+              
+              <div class="log-entry">
+                <div class="log-icon property">
+                  <i class="fa-solid fa-door-closed"></i>
+                </div>
+                <div class="log-content">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="pagination">
+            <div class="pagination-info">
+              Showing 1-8 of 247 activities from today
+            </div>
+            <div class="pagination-buttons">
+              <a href="#" class="pagination-btn"><i class="fa-solid fa-chevron-left"></i> Previous</a>
+              <a href="#" class="pagination-btn active">1</a>
+              <a href="#" class="pagination-btn">2</a>
+              <a href="#" class="pagination-btn">3</a>
+              <span>...</span>
+              <a href="#" class="pagination-btn">31</a>
+              <a href="#" class="pagination-btn">Next <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+
+          <div class="export-controls">
+            <a href="#" class="export-btn export-pdf">
+              <i class="fa-solid fa-file-pdf"></i> Export as PDF
+            </a>
+            <a href="#" class="action-btn">
+              <i class="fa-solid fa-trash"></i> Clear Old Logs
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

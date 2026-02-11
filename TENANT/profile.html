@@ -12,86 +12,130 @@
 
 <body>
 <div class="app">
-  <input type="checkbox" id="menu-toggle">
-
-  <div class="sidebar">
-    <label for="menu-toggle" class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-
+  <aside class="sidebar">
     <div class="menu-items">
       <a href="dashboard.html" class="icon-btn" title="Dashboard">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-chart-line"></i>
       </a>
       <a href="membership.html" class="icon-btn" title="My Room">
-        <i class="fa-solid fa-id-card"></i>
+        <i class="fa-solid fa-building"></i>
       </a>
       <a href="payments.html" class="icon-btn" title="Payments">
         <i class="fa-solid fa-credit-card"></i>
+      </a>
+      <a href="maintenance.html" class="icon-btn" title="Maintenance">
+        <i class="fa-solid fa-tools"></i>
       </a>
       <a href="notifications.html" class="icon-btn" title="Notifications">
         <i class="fa-solid fa-bell"></i>
       </a>
       <a href="profile.html" class="icon-btn active" title="Profile">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user-circle"></i>
+      </a>
+      <a href="settings.html" class="icon-btn" title="Settings">
+        <i class="fa-solid fa-gear"></i>
       </a>
       <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
     </div>
-  </div>
+  </aside>
 
-  <div class="content tenant-content">
-    <div class="container">
-      <div class="header">
-        <h1><i class="bi bi-person-circle"></i> My Profile</h1>
-        <p>Manage your personal information</p>
-      </div>
+  <main class="content">
+    <div class="content-inner">
+      <div class="container">
 
-      <div class="profile-header">
-        <div class="avatar-circle">
-          <i class="bi bi-person-fill"></i>
+        <div class="header">
+          <h1><i class="bi bi-person-circle"></i> My Profile</h1>
+          <p>Manage your personal information and account details</p>
         </div>
-        <div>
+
+        <div class="profile-avatar">
+          <div class="profile-avatar-img">
+            <i class="bi bi-person-fill"></i>
+            <a href="#" class="edit-avatar-btn">
+              <i class="bi bi-camera"></i>
+            </a>
+          </div>
           <h3>Cryzon Yoga</h3>
           <p>Tenant since January 2024</p>
           <span class="status active">Active Tenant</span>
         </div>
-      </div>
 
-      <div class="info-section">
-        <h2><i class="bi bi-person-vcard"></i> Personal Information</h2>
-        <div class="info-grid">
-          <div class="info-item"><label>Full Name</label><span>Cryzon Yoga</span></div>
-          <div class="info-item"><label>Date of Birth</label><span>May 15, 2005</span></div>
-          <div class="info-item"><label>Email</label><span>yoga@gmail.com</span></div>
-          <div class="info-item"><label>Phone</label><span>0917-123-4567</span></div>
+        <div class="info-section">
+          <h2><i class="bi bi-person-vcard"></i> Personal Information</h2>
+          <div class="profile-info-grid">
+            <div class="profile-field">
+              <label>Full Name</label>
+              <input type="text" class="form-control" value="Cryzon Yoga">
+            </div>
+            <div class="profile-field">
+              <label>Date of Birth</label>
+              <input type="date" class="form-control" value="2005-05-15">
+            </div>
+            <div class="profile-field">
+              <label>Email Address</label>
+              <input type="email" class="form-control" value="yoga@gmail.com">
+            </div>
+            <div class="profile-field">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" value="0917-123-4567">
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="info-section">
-        <h2><i class="bi bi-geo-alt"></i> Address Information</h2>
-        <div class="address-item">
-          <h4>Current Residence</h4>
-          <p>Building A, Room 305</p>
-          <p>123 Main Street Bontoc</p>
-          <p>Bontoc</p>
+        <div class="info-section">
+          <h2><i class="bi bi-geo-alt"></i> Address Information</h2>
+          <div class="address-item">
+            <h4>Current Residence</h4>
+            <p><strong>Building:</strong> Building A</p>
+            <p><strong>Room:</strong> 305</p>
+            <p><strong>Street:</strong> 123 Main Street Bontoc</p>
+            <p><strong>City:</strong> Bontoc</p>
+          </div>
         </div>
-      </div>
 
-      <div class="quick-actions">
-        <a href="#" class="action-btn">
-          <i class="bi bi-pencil"></i> Edit Profile
-        </a>
-        <a href="#" class="action-btn">
-          <i class="bi bi-key"></i> Change Password
-        </a>
-      </div>
+        <div class="info-section">
+          <h2><i class="bi bi-telephone"></i> Emergency Contacts</h2>
+          <div class="emergency-contacts">
+            <div class="contact-card">
+              <div class="contact-header">
+                <i class="bi bi-person-fill"></i>
+                <h4>Primary Contact</h4>
+              </div>
+              <div class="contact-details">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Relationship:</strong> Brother</p>
+                <p><strong>Phone:</strong> 0918-765-4321</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-header">
+                <i class="bi bi-person-fill"></i>
+                <h4>Secondary Contact</h4>
+              </div>
+              <div class="contact-details">
+                <p><strong>Name:</strong> Jane Smith</p>
+                <p><strong>Relationship:</strong> Sister</p>
+                <p><strong>Phone:</strong> 0927-456-7890</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="profile-actions">
+          <a href="#" class="profile-action-btn primary">
+            <i class="bi bi-floppy"></i> Save Changes
+          </a>
+          <a href="#" class="profile-action-btn secondary">
+            <i class="bi bi-key"></i> Change Password
+          </a>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </main>
 </div>
-
-
 </body>
 </html>

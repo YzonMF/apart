@@ -12,13 +12,7 @@
 
 <body>
 <div class="app">
-  <input type="checkbox" id="menu-toggle">
-
-  <div class="sidebar">
-    <label for="menu-toggle" class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-
+  <aside class="sidebar">
     <div class="menu-items">
       <a href="dashboard.html" class="icon-btn active" title="Dashboard">
         <i class="fa-solid fa-house"></i>
@@ -30,6 +24,10 @@
 
       <a href="payments.html" class="icon-btn" title="Payments">
         <i class="fa-solid fa-credit-card"></i>
+      </a>
+
+      <a href="maintenance.html" class="icon-btn" title="Maintenance">
+        <i class="fa-solid fa-tools"></i>
       </a>
 
       <a href="notifications.html" class="icon-btn" title="Notifications">
@@ -45,101 +43,110 @@
       </a>
 
       <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
     </div>
-  </div>
+  </aside>
 
-  <div class="content tenant-content">
-    <div class="container">
+  <main class="content">
+    <div class="content-inner">
+      <div class="container">
 
-      <div class="header">
-        <h1><i class="bi bi-house-door-fill"></i> Tenant Dashboard</h1>
-        <p>Welcome back, Tenant</p>
+        <div class="header">
+          <h1><i class="bi bi-house-door-fill"></i> Tenant Dashboard</h1>
+          <p>Welcome back, Cryzon Yoga</p>
+        </div>
+
+        <div class="dashboard-grid">
+
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-person-circle"></i>
+              <h3>Account Status</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Membership ID:</strong> TEN-2024-001</p>
+              <p><strong>Unit:</strong> Building A, Room 305</p>
+              <span class="status active">Active</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-credit-card"></i>
+              <h3>Payment Status</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Current Month:</strong> January 2026</p>
+              <p><strong>Due Date:</strong> February 5, 2026</p>
+              <span class="status paid">Paid</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-tools"></i>
+              <h3>Maintenance</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Active Requests:</strong> 1</p>
+              <p><strong>Last Request:</strong> Leaking faucet</p>
+              <span class="status pending">In Progress</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-building"></i>
+              <h3>Room Info</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Building:</strong> A</p>
+              <p><strong>Room Type:</strong> 1 Bedroom</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="info-section">
+          <h2><i class="bi bi-info-circle"></i> Rental Details</h2>
+          <div class="info-grid">
+            <div class="info-item"><label>Monthly Rent</label><span>₱12,000</span></div>
+            <div class="info-item"><label>Contract Start</label><span>Jan 1, 2024</span></div>
+            <div class="info-item"><label>Contract End</label><span>Dec 31, 2026</span></div>
+            <div class="info-item"><label>Advance</label><span>1 Month</span></div>
+            <div class="info-item"><label>Manager</label><span>Property Manager</span></div>
+          </div>
+        </div>
+
+        <div class="notifications">
+          <h2><i class="bi bi-bell"></i> Recent Notifications</h2>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-check-circle"></i> Payment Confirmed</h4>
+            <p>January rent has been received and processed successfully.</p>
+            <span class="date">Jan 29, 2026 • 09:30 AM</span>
+          </div>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-wrench"></i> Maintenance Update</h4>
+            <p>Leaking faucet repair ongoing. Technician scheduled for Feb 2, 2026.</p>
+            <span class="date">Jan 28, 2026 • 02:15 PM</span>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a href="maintenance.html" class="action-btn">
+            <i class="bi bi-tools"></i> Submit Maintenance Request
+          </a>
+          <a href="payments.html" class="action-btn">
+            <i class="bi bi-credit-card"></i> View Payment History
+          </a>
+        </div>
+
       </div>
-
-      <!-- DASHBOARD CARDS -->
-      <div class="dashboard-grid">
-
-        <div class="card">
-          <div class="card-header">
-            <i class="bi bi-person-circle"></i>
-            <h3>Account Status</h3>
-          </div>
-          <div class="card-content">
-            <p><strong>Membership ID:</strong> TEN-2024-001</p>
-            <p><strong>Unit:</strong> Building A, Room 305</p>
-            <span class="status active">Active</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <i class="bi bi-credit-card"></i>
-            <h3>Payment Status</h3>
-          </div>
-          <div class="card-content">
-            <p><strong>Current Month:</strong> January 2026</p>
-            <p><strong>Amount Due:</strong> ₱12,000.00</p>
-            <p><strong>Due Date:</strong> February 5, 2026</p>
-            <span class="status paid">Paid</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <i class="bi bi-tools"></i>
-            <h3>Maintenance</h3>
-          </div>
-          <div class="card-content">
-            <p><strong>Active Requests:</strong> 1</p>
-            <p><strong>Last Request:</strong> Leaking faucet</p>
-            <span class="status pending">In Progress</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <i class="bi bi-building"></i>
-            <h3>Room Info</h3>
-          </div>
-          <div class="card-content">
-            <p><strong>Building:</strong> A</p>
-            <p><strong>Room Type:</strong> 1 Bedroom</p>
-            <p><strong>Size:</strong> 35 sqm</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="info-section">
-        <h2><i class="bi bi-info-circle"></i> Rental Details</h2>
-        <div class="info-grid">
-          <div class="info-item"><label>Monthly Rent</label><span>₱12,000</span></div>
-          <div class="info-item"><label>Contract Start</label><span>Jan 1, 2024</span></div>
-          <div class="info-item"><label>Contract End</label><span>Dec 31, 2026</span></div>
-          <div class="info-item"><label>Deposit</label><span>₱24,000</span></div>
-          <div class="info-item"><label>Advance</label><span>1 Month</span></div>
-          <div class="info-item"><label>Manager</label><span>Property Manager</span></div>
-        </div>
-      </div>
-
-      <div class="notifications">
-        <h2><i class="bi bi-bell"></i> Recent Notifications</h2>
-
-        <div class="notification-item">
-          <h4><i class="bi bi-check-circle"></i> Payment Confirmed</h4>
-          <p>January rent has been received.</p>
-          <span class="date">Jan 29, 2026</span>
-        </div>
-      </div>
-        <a href="payments.html" class="action-btn">
-          <i class="bi bi-credit-card"></i> View Payments
-        </a>
-      </div>
-
     </div>
-  </div>
+  </main>
 </div>
 </body>
 </html>

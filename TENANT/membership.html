@@ -9,16 +9,9 @@
   <link rel="stylesheet" href="CSS/dashboard.css">
   <link rel="stylesheet" href="CSS/membership.css">
 </head>
-
 <body>
 <div class="app">
-  <input type="checkbox" id="menu-toggle">
-
-  <div class="sidebar">
-    <label for="menu-toggle" class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-
+  <aside class="sidebar">
     <div class="menu-items">
       <a href="dashboard.html" class="icon-btn" title="Dashboard">
         <i class="fa-solid fa-house"></i>
@@ -29,58 +22,124 @@
       <a href="payments.html" class="icon-btn" title="Payments">
         <i class="fa-solid fa-credit-card"></i>
       </a>
-
+      <a href="maintenance.html" class="icon-btn" title="Maintenance">
+        <i class="fa-solid fa-tools"></i>
+      </a>
       <a href="notifications.html" class="icon-btn" title="Notifications">
         <i class="fa-solid fa-bell"></i>
       </a>
       <a href="profile.html" class="icon-btn" title="Profile">
         <i class="fa-solid fa-user"></i>
       </a>
+      <a href="settings.html" class="icon-btn" title="Settings">
+        <i class="fa-solid fa-gear"></i>
+      </a>
       <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
     </div>
-  </div>
+  </aside>
 
-  <div class="content tenant-content">
-    <div class="container">
-      <div class="header">
-        <h1><i class="bi bi-house-door-fill"></i> My Room Details</h1>
-        <p>Complete membership and room information</p>
-      </div>
+  <main class="content">
+    <div class="content-inner">
+      <div class="container">
+        <div class="header">
+          <h1><i class="bi bi-house-door-fill"></i> My Room Details</h1>
+          <p>Complete membership and room information</p>
+        </div>
 
-      <div class="info-section">
-        <h2><i class="bi bi-person-badge"></i> Membership Information</h2>
-        <div class="info-grid">
-          <div class="info-item"><label>Membership ID</label><span>TEN-2024-001</span></div>
-          <div class="info-item"><label>Status</label><span class="status active">Active</span></div>
-          <div class="info-item"><label>Date Joined</label><span>January 1, 2024</span></div>
-          <div class="info-item"><label>Invitation Code</label><span>BLD-A-305</span></div>
+        <div class="profile-header">
+          <div class="avatar-circle">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div>
+            <h3>Cryzon Yoga</h3>
+            <p>Building A, Room 305</p>
+            <span class="status active">Active Member</span>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2><i class="bi bi-person-badge"></i> Membership Information</h2>
+          <div class="info-grid">
+            <div class="info-item"><label>Membership ID</label><span>TEN-2024-001</span></div>
+            <div class="info-item"><label>Status</label><span class="status active">Active</span></div>
+            <div class="info-item"><label>Date Joined</label><span>January 1, 2024</span></div>
+            <div class="info-item"><label>Invitation Code</label><span>BLD-A-305</span></div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2><i class="bi bi-door-closed"></i> Room Specifications</h2>
+          <div class="info-grid">
+            <div class="info-item"><label>Building</label><span>Building A</span></div>
+            <div class="info-item"><label>Room Number</label><span>305</span></div>
+            <div class="info-item"><label>Room Type</label><span>1 Bedroom Unit</span></div>
+            <div class="info-item"><label>Floor Area</label><span>35 sqm</span></div>
+            <div class="info-item"><label>Floor Level</label><span>3rd Floor</span></div>
+            <div class="info-item"><label>Furnished</label><span>Fully Furnished</span></div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2><i class="bi bi-star"></i> Included Amenities</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item">
+              <i class="bi bi-wifi"></i>
+              <span>WiFi Internet</span>
+            </div>
+            <div class="amenity-item">
+              <i class="bi bi-droplet"></i>
+              <span>Water Heater</span>
+            </div>
+            <div class="amenity-item">
+              <i class="bi bi-snow"></i>
+              <span>Air Conditioning</span>
+            </div>
+            <div class="amenity-item">
+              <i class="bi bi-shield-check"></i>
+              <span>24/7 Security</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2><i class="bi bi-files"></i> Room Documents</h2>
+          <div class="documents-list">
+            <div class="document-item">
+              <i class="bi bi-file-earmark-text"></i>
+              <div>
+                <h4>Lease Agreement</h4>
+                <p>Signed rental contract valid until Dec 31, 2026</p>
+                <a href="#" class="view-btn">View Document</a>
+              </div>
+            </div>
+            
+            <div class="document-item">
+              <i class="bi bi-file-earmark-check"></i>
+              <div>
+                <h4>House Rules</h4>
+                <p>Building policies and regulations</p>
+                <a href="#" class="view-btn">View Document</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a href="#" class="action-btn">
+            <i class="bi bi-printer"></i> Print Details
+          </a>
+          <a href="#" class="action-btn">
+            <i class="bi bi-download"></i> Download Documents
+          </a>
+          <a href="maintenance.html" class="action-btn">
+            <i class="bi bi-tools"></i> Request Maintenance
+          </a>
         </div>
       </div>
-
-      <div class="info-section">
-        <h2><i class="bi bi-door-closed"></i> Room Specifications</h2>
-        <div class="info-grid">
-          <div class="info-item"><label>Building</label><span>Building A</span></div>
-          <div class="info-item"><label>Room Number</label><span>305</span></div>
-          <div class="info-item"><label>Room Type</label><span>1 Bedroom Unit</span></div>
-          <div class="info-item"><label>Floor Area</label><span>35 sqm</span></div>
-        </div>
-      </div>
-
-      <div class="info-section">
-        <h2><i class="bi bi-star"></i> Included Amenities</h2>
-        <div class="info-grid">
-          <div class="info-item"><label>WiFi Internet</label><span>Included</span></div>
-          <div class="info-item"><label>Water Heater</label><span>Provided</span></div>
-          <div class="info-item"><label>Air Conditioning</label><span>Installed</span></div>
-          <div class="info-item"><label>24/7 Security</label><span>Yes</span></div>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </main>
 </div>
 </body>
 </html>

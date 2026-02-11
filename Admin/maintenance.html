@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Maintenance - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Acss/sidebar.css">
+  <link rel="stylesheet" href="Acss/maintenance.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="admin.html" class="icon-btn" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="approval.html" class="icon-btn" title="Land Owner Approvals">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="badge">5</span>
+        </a>
+        <a href="accounts.html" class="icon-btn" title="Manage Accounts">
+          <i class="fa-solid fa-users-gear"></i>
+        </a>
+        <a href="security.html" class="icon-btn" title="Security & Data">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="maintenance.html" class="icon-btn active" title="System Maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </a>
+        <a href="logs.html" class="icon-btn" title="Activity Logs">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </a>
+        <a href="settings.html" class="icon-btn" title="Admin Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <div class="container">
+
+          <div class="user-info">
+            <div class="user-details">
+              <h4>SYSTEM MAINTENANCE</h4>
+              <p>Manage system updates, backups, and performance</p>
+            </div>
+            <div class="user-avatar">SM</div>
+          </div>
+
+          <div class="header">
+            <h1>
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              System Maintenance & Updates
+            </h1>
+            <p>Manage system updates, monitor performance, and schedule maintenance</p>
+          </div>
+
+          <div class="maintenance-overview">
+            <div class="overview-card">
+              <div class="overview-card-header">
+                <div class="overview-card-title">System Uptime</div>
+                <i class="fa-solid fa-server" style="color: var(--accent);"></i>
+              </div>
+              <div class="overview-card-value">99.9%</div>
+              <p>System has been running for 45 days without major issues</p>
+              <div class="overview-card-footer">
+                <span>Last restart: 45 days ago</span>
+                <span>Stable</span>
+              </div>
+            </div>
+
+            <div class="overview-card">
+              <div class="overview-card-header">
+                <div class="overview-card-title">Available Updates</div>
+                <i class="fa-solid fa-download" style="color: var(--accent);"></i>
+              </div>
+              <div class="overview-card-value">3</div>
+              <p>3 updates available including 1 security patch</p>
+              <div class="overview-card-footer">
+                <span>Last update: 2 weeks ago</span>
+                <span class="status warning">Updates Pending</span>
+              </div>
+            </div>
+
+            <div class="overview-card">
+              <div class="overview-card-header">
+                <div class="overview-card-title">Database Size</div>
+                <i class="fa-solid fa-database" style="color: var(--accent);"></i>
+              </div>
+              <div class="overview-card-value">2.4 GB</div>
+              <p>Database is using 45% of allocated storage</p>
+              <div class="overview-card-footer">
+                <span>Last backup: Today</span>
+                <span class="status success">Healthy</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-rotate"></i>
+              <h2>System Updates</h2>
+              <a href="#" class="section-badge">Check for Updates</a>
+            </div>
+
+            <div class="system-updates">
+              <div class="update-item">
+                <div class="update-item-header">
+                  <div class="update-item-title">Security Patch Update</div>
+                  <span class="update-item-version">v2.5.1</span>
+                </div>
+                <div class="update-item-description">
+                  Critical security patch addressing vulnerability in user authentication system. Recommended to install immediately.
+                </div>
+                <div class="update-item-meta">
+                  <span><i class="fa-solid fa-clock"></i> Released: 2 days ago</span>
+                  <span><i class="fa-solid fa-download"></i> Size: 45 MB</span>
+                </div>
+                <div class="update-actions">
+                  <a href="#" class="control-btn"><i class="fa-solid fa-download"></i> Install Update</a>
+                  <a href="#" class="control-btn secondary"><i class="fa-solid fa-circle-info"></i> View Details</a>
+                </div>
+              </div>
+              
+              <div class="update-item">
+                <div class="update-item-header">
+                  <div class="update-item-title">Feature Update</div>
+                  <span class="update-item-version">v2.5.0</span>
+                </div>
+                <div class="update-item-description">
+                  New features including enhanced reporting, improved dashboard, and additional user management tools.
+                </div>
+                <div class="update-item-meta">
+                  <span><i class="fa-solid fa-clock"></i> Released: 1 week ago</span>
+                  <span><i class="fa-solid fa-download"></i> Size: 120 MB</span>
+                </div>
+                <div class="update-actions">
+                  <a href="#" class="control-btn"><i class="fa-solid fa-download"></i> Install Update</a>
+                  <a href="#" class="control-btn secondary"><i class="fa-solid fa-circle-info"></i> View Details</a>
+                </div>
+              </div>
+              
+              <div class="update-item">
+                <div class="update-item-header">
+                  <div class="update-item-title">Bug Fix Update</div>
+                  <span class="update-item-version">v2.4.2</span>
+                </div>
+                <div class="update-item-description">
+                  Minor bug fixes and performance improvements for payment processing and notification systems.
+                </div>
+                <div class="update-item-meta">
+                  <span><i class="fa-solid fa-clock"></i> Released: 2 weeks ago</span>
+                  <span><i class="fa-solid fa-download"></i> Size: 25 MB</span>
+                </div>
+                <div class="update-actions">
+                  <a href="#" class="control-btn"><i class="fa-solid fa-download"></i> Install Update</a>
+                  <a href="#" class="control-btn secondary"><i class="fa-solid fa-circle-info"></i> View Details</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-database"></i>
+              <h2>Database Management</h2>
+            </div>
+
+            <div class="database-stats">
+              <div class="database-stat">
+                <div class="database-stat-value">2.4 GB</div>
+                <div class="database-stat-label">Total Size</div>
+              </div>
+              <div class="database-stat">
+                <div class="database-stat-value">127</div>
+                <div class="database-stat-label">User Accounts</div>
+              </div>
+              <div class="database-stat">
+                <div class="database-stat-value">42</div>
+                <div class="database-stat-label">Properties</div>
+              </div>
+              <div class="database-stat">
+                <div class="database-stat-value">1,258</div>
+                <div class="database-stat-label">Transactions</div>
+              </div>
+            </div>
+
+            <div class="maintenance-controls">
+              <a href="#" class="control-btn"><i class="fa-solid fa-database"></i> Backup Database</a>
+              <a href="#" class="control-btn secondary"><i class="fa-solid fa-trash"></i> Clean Old Data</a>
+              <a href="#" class="control-btn secondary"><i class="fa-solid fa-magnifying-glass"></i> Run Integrity Check</a>
+              <a href="#" class="control-btn warning"><i class="fa-solid fa-rotate"></i> Optimize Database</a>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-chart-line"></i>
+              <h2>System Performance</h2>
+            </div>
+
+            <div class="performance-metrics">
+              <div class="metric-row">
+                <div class="metric-info">
+                  <h5>CPU Usage</h5>
+                  <p>Current processor utilization</p>
+                </div>
+                <div class="metric-value">24%</div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 24%;"></div>
+                </div>
+              </div>
+              
+              <div class="metric-row">
+                <div class="metric-info">
+                  <h5>Memory Usage</h5>
+                  <p>RAM utilization</p>
+                </div>
+                <div class="metric-value">68%</div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 68%;"></div>
+                </div>
+              </div>
+              
+              <div class="metric-row">
+                <div class="metric-info">
+                  <h5>Disk Space</h5>
+                  <p>Storage utilization</p>
+                </div>
+                <div class="metric-value">45%</div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 45%;"></div>
+                </div>
+              </div>
+              
+              <div class="metric-row">
+                <div class="metric-info">
+                  <h5>Response Time</h5>
+                  <p>Average page load time</p>
+                </div>
+                <div class="metric-value">320ms</div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 32%;"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-calendar-days"></i>
+              <h2>Scheduled Maintenance</h2>
+              <a href="#" class="section-badge">Schedule New</a>
+            </div>
+
+            <div class="maintenance-schedule">
+              <div class="schedule-item">
+                <div class="schedule-info">
+                  <h5>Weekly Database Backup</h5>
+                  <p>Every Sunday at 02:00 AM (Duration: 2 hours)</p>
+                </div>
+                <div class="schedule-actions">
+                  <span class="status success">Active</span>
+                  <a href="#" class="btn-view"><i class="fa-solid fa-pen"></i> Edit</a>
+                </div>
+              </div>
+              
+              <div class="schedule-item">
+                <div class="schedule-info">
+                  <h5>Monthly System Update</h5>
+                  <p>First Monday of each month at 03:00 AM</p>
+                </div>
+                <div class="schedule-actions">
+                  <span class="status success">Active</span>
+                  <a href="#" class="btn-view"><i class="fa-solid fa-pen"></i> Edit</a>
+                </div>
+              </div>
+              
+              <div class="schedule-item">
+                <div class="schedule-info">
+                  <h5>Quarterly Data Archiving</h5>
+                  <p>Next: April 1, 2024 at 01:00 AM</p>
+                </div>
+                <div class="schedule-actions">
+                  <span class="status warning">Upcoming</span>
+                  <a href="#" class="btn-view"><i class="fa-solid fa-pen"></i> Edit</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h2>System Health</h2>
+            </div>
+
+            <div class="system-health">
+              <div class="health-indicator">
+                <div class="health-icon good">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="health-details">
+                  <h5>Web Server Status</h5>
+                  <p>Apache web server running normally</p>
+                </div>
+                <span class="status success">Operational</span>
+              </div>
+              
+              <div class="health-indicator">
+                <div class="health-icon good">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="health-details">
+                  <h5>Database Server</h5>
+                  <p>MySQL database connections stable</p>
+                </div>
+                <span class="status success">Operational</span>
+              </div>
+              
+              <div class="health-indicator">
+                <div class="health-icon warning">
+                  <i class="fa-solid fa-exclamation"></i>
+                </div>
+                <div class="health-details">
+                  <h5>Email Service</h5>
+                  <p>SMTP server experiencing minor delays</p>
+                </div>
+                <span class="status warning">Degraded</span>
+              </div>
+              
+              <div class="health-indicator">
+                <div class="health-icon good">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="health-details">
+                  <h5>Backup Service</h5>
+                  <p>Automated backups running as scheduled</p>
+                </div>
+                <span class="status success">Operational</span>
+              </div>
+            </div>
+          </section>
+
+          <div class="quick-actions">
+            <a href="#" class="action-btn"><i class="fa-solid fa-download"></i> Install All Updates</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-database"></i> Full System Backup</a>
+            <a href="#" class="action-btn"><i class="fa-solid fa-broom"></i> Clear System Cache</a>
+            <a href="#" class="action-btn danger"><i class="fa-solid fa-power-off"></i> Restart System</a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

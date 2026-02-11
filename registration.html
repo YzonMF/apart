@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenant Registration</title>
+    <title>User Registration</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="ACSS/registration.css">
@@ -11,7 +11,7 @@
 <body>
     <div class="register-wrapper">
         <section class="icon-section">
-            <p>Create your tenant account</p>
+            <p>Create your account</p>
             <i class="bi bi-person-circle"></i>
         </section>
         
@@ -21,8 +21,24 @@
             </div>
             
             <form method="POST" action="#">
+                <!-- Role Selection using Radio Buttons -->
+                <div class="role-container">
+                    <label class="role-label">Register as:</label>
+                    <div class="role-selection">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="tenant" id="role-tenant" required checked>
+                            <span>Tenant</span>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="landowner" id="role-landowner" required>
+                            <span>Land Owner</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Common Fields -->
                 <div class="input-group">
-                    <label for="username">Username</label>
+                    <label for="username">Full name</label>
                     <input id="username" name="username" type="text" placeholder="Input your username" required
                            value="Demo User">
                 </div>
@@ -39,10 +55,31 @@
                            value="demo123">
                 </div>
 
-                <div class="input-group">
-                    <label for="invitecode">Invitation Code</label>
-                    <input id="invitecode" name="invitecode" type="text" placeholder="Input your invitation code" required
-                           value="INVITE123">
+                <!-- Tenant-specific Fields -->
+                <div class="tenant-fields">
+                    <div class="input-group">
+                        <label for="invitecode">Invitation Code</label>
+                        <input id="invitecode" name="invitecode" type="text" placeholder="Input your invitation code"
+                               value="INVITE123">
+                    </div>
+                </div>
+
+                <!-- Land Owner-specific Fields -->
+                <div class="landowner-fields">
+                    <div class="input-group">
+                        <label for="houseaddress">House Address</label>
+                        <input id="houseaddress" name="houseaddress" type="text" placeholder="Input your house address">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="housenumber">House Number</label>
+                        <input id="housenumber" name="housenumber" type="text" placeholder="Input your house number">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="permitnumber">Business Permit Number</label>
+                        <input id="permitnumber" name="permitnumber" type="text" placeholder="Input your business permit number">
+                    </div>
                 </div>
                 
                 <button type="submit" class="submitbtn">Register</button>

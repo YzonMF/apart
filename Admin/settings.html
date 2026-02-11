@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Settings - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Acss/sidebar.css">
+  <link rel="stylesheet" href="Acss/settings.css">
+
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="menu-items">
+        <a href="admin.html" class="icon-btn" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+        <a href="approval.html" class="icon-btn" title="Land Owner Approvals">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="badge">5</span>
+        </a>
+        <a href="accounts.html" class="icon-btn" title="Manage Accounts">
+          <i class="fa-solid fa-users-gear"></i>
+        </a>
+        <a href="security.html" class="icon-btn" title="Security & Data">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="maintenance.html" class="icon-btn" title="System Maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </a>
+        <a href="logs.html" class="icon-btn" title="Activity Logs">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </a>
+        <a href="settings.html" class="icon-btn active" title="Admin Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <a href="../index.html" class="icon-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <div class="container">
+
+          <div class="user-info">
+            <div class="user-details">
+              <h4>ADMIN SETTINGS</h4>
+              <p>Configure system preferences and admin controls</p>
+            </div>
+            <div class="user-avatar">AS</div>
+          </div>
+
+          <div class="header">
+            <h1>
+              <i class="fa-solid fa-gear"></i>
+              System & Admin Settings
+            </h1>
+            <p>Configure system preferences, security settings, and admin controls</p>
+          </div>
+
+          <div class="settings-tabs">
+            <a href="#general" class="settings-tab">General Settings</a>
+            <a href="#security" class="settings-tab">Security Settings</a>
+            <a href="#approval" class="settings-tab">Approval Settings</a>
+            <a href="#notifications" class="settings-tab">Notifications</a>
+            <a href="#backup" class="settings-tab">Backup Settings</a>
+          </div>
+
+          <div id="general" class="settings-panel">
+            <h2><i class="fa-solid fa-sliders"></i> General System Settings</h2>
+            
+            <div class="settings-section">
+              <h3>System Information</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">System Name</div>
+                  </div>
+                  <div class="setting-description">
+                    The display name for your property management system
+                  </div>
+                  <input type="text" class="input-control" value="Property Management System">
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">System URL</div>
+                  </div>
+                  <div class="setting-description">
+                    The base URL for accessing the system
+                  </div>
+                  <input type="text" class="input-control" value="https://property-management.example.com">
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Default Timezone</div>
+                  </div>
+                  <div class="setting-description">
+                    Set the default timezone for the entire system
+                  </div>
+                  <select class="select-control">
+                    <option>(UTC-08:00) Pacific Time (US & Canada)</option>
+                    <option selected>(UTC-05:00) Eastern Time (US & Canada)</option>
+                    <option>(UTC+00:00) Greenwich Mean Time</option>
+                    <option>(UTC+08:00) Singapore Standard Time</option>
+                  </select>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Date Format</div>
+                  </div>
+                  <div class="setting-description">
+                    How dates should be displayed throughout the system
+                  </div>
+                  <select class="select-control">
+                    <option>MM/DD/YYYY (American)</option>
+                    <option selected>DD/MM/YYYY (European)</option>
+                    <option>YYYY-MM-DD (ISO)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Appearance & Theme</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Primary Color</div>
+                  </div>
+                  <div class="setting-description">
+                    The main accent color used throughout the interface
+                  </div>
+                  <div class="color-picker">
+                    <div class="color-preview"></div>
+                    <input type="text" class="input-control color-input" value="#f5b400">
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Dark Mode</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Enable dark mode for all user interfaces
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Logo</div>
+                  </div>
+                  <div class="setting-description">
+                    Upload a custom logo for the system header
+                  </div>
+                  <input type="file" class="input-control">
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Favicon</div>
+                  </div>
+                  <div class="setting-description">
+                    Upload a custom favicon for browser tabs
+                  </div>
+                  <input type="file" class="input-control">
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>System Behavior</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Auto Logout</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Automatically log out users after period of inactivity
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label>Timeout (minutes):</label>
+                    <input type="number" class="input-control" value="30" min="5" max="240">
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Registration</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Allow new users to register for accounts
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Maintenance Mode</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Temporarily disable public access for maintenance
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="security" class="settings-panel">
+            <h2><i class="fa-solid fa-shield-halved"></i> Security Settings</h2>
+            
+            <div class="settings-section">
+              <h3>Authentication & Login</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Two-Factor Authentication</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Require 2FA for all administrator accounts
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Password Policy</div>
+                  </div>
+                  <div class="setting-description">
+                    Set requirements for user passwords
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label><input type="checkbox" checked> Minimum 8 characters</label><br>
+                    <label><input type="checkbox" checked> Require uppercase letters</label><br>
+                    <label><input type="checkbox" checked> Require numbers</label><br>
+                    <label><input type="checkbox"> Require special characters</label>
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Failed Login Protection</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Lock accounts after multiple failed login attempts
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label>Max attempts:</label>
+                    <input type="number" class="input-control" value="5" min="3" max="10">
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Session Management</div>
+                  </div>
+                  <div class="setting-description">
+                    Control how user sessions are managed
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label><input type="checkbox" checked> Allow multiple sessions</label><br>
+                    <label><input type="checkbox"> Force logout all other sessions on login</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Data Protection</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Data Encryption</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Encrypt sensitive data in the database
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">IP Restrictions</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Restrict admin access to specific IP addresses
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label>Allowed IPs (comma separated):</label>
+                    <textarea class="textarea-control" placeholder="192.168.1.1, 10.0.0.1"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="approval" class="settings-panel">
+            <h2><i class="fa-solid fa-user-check"></i> Land Owner Approval Settings</h2>
+            
+            <div class="settings-section">
+              <h3>Approval Process</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Auto-Approval</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Automatically approve land owners with valid LGU permits
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Manual Review Required</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Always require manual review for new land owner applications
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Approval Notifications</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Send email notifications when applications are approved or declined
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Default Approval Time</div>
+                  </div>
+                  <div class="setting-description">
+                    Time allowed for reviewing applications before automatic action
+                  </div>
+                  <select class="select-control">
+                    <option>24 Hours</option>
+                    <option selected>48 Hours</option>
+                    <option>72 Hours</option>
+                    <option>1 Week</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Permit Requirements</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">LGU Permit Required</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Require valid LGU business permit for land owner registration
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Permit Validation</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Validate LGU permit numbers against government databases
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Required Documents</div>
+                  </div>
+                  <div class="setting-description">
+                    Documents required for land owner approval
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label><input type="checkbox" checked> Business Permit</label><br>
+                    <label><input type="checkbox" checked> Tax Clearance</label><br>
+                    <label><input type="checkbox"> Mayor's Permit</label><br>
+                    <label><input type="checkbox"> Property Title</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="notifications" class="settings-panel">
+            <h2><i class="fa-solid fa-bell"></i> Notification Settings</h2>
+            
+            <div class="settings-section">
+              <h3>Email Notifications</h3>
+              <div class="notification-preference">
+                <div class="notification-info">
+                  <h5>System Alerts</h5>
+                  <p>Critical system errors and security alerts</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="notification-preference">
+                <div class="notification-info">
+                  <h5>Approval Requests</h5>
+                  <p>New land owner applications requiring review</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="notification-preference">
+                <div class="notification-info">
+                  <h5>User Activities</h5>
+                  <p>Important user actions and account changes</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="notification-preference">
+                <div class="notification-info">
+                  <h5>Backup Reports</h5>
+                  <p>Daily/weekly backup completion reports</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>In-App Notifications</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Show Unread Count</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Display badge with unread notification count
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Sound Alerts</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Play sound for new notifications
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Auto-Clear Read</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Automatically clear read notifications after 7 days
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="backup" class="settings-panel">
+            <h2><i class="fa-solid fa-database"></i> Backup Settings</h2>
+            
+            <div class="settings-section">
+              <h3>Backup Schedule</h3>
+              <div class="backup-schedule">
+                <div class="backup-item">
+                  <div class="backup-title">Daily Backups</div>
+                  <div class="backup-info">Every day at 02:00 AM</div>
+                  <label class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                
+                <div class="backup-item">
+                  <div class="backup-title">Weekly Backups</div>
+                  <div class="backup-info">Every Sunday at 03:00 AM</div>
+                  <label class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                
+                <div class="backup-item">
+                  <div class="backup-title">Monthly Backups</div>
+                  <div class="backup-info">1st of each month at 04:00 AM</div>
+                  <label class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Backup Configuration</h3>
+              <div class="settings-grid">
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Retention Period</div>
+                  </div>
+                  <div class="setting-description">
+                    How long to keep backup files before deletion
+                  </div>
+                  <select class="select-control">
+                    <option>7 days</option>
+                    <option>30 days</option>
+                    <option selected>90 days</option>
+                    <option>1 year</option>
+                  </select>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Compression</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Compress backup files to save storage space
+                  </div>
+                </div>
+                
+                <div class="setting-item">
+                  <div class="setting-header">
+                    <div class="setting-title">Remote Backup</div>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-description">
+                    Upload backups to remote storage (AWS S3, Google Cloud, etc.)
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <label>Remote Storage URL:</label>
+                    <input type="text" class="input-control" placeholder="s3://bucket-name/backups/">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-actions">
+            <a href="#" class="btn-reset"><i class="fa-solid fa-rotate-left"></i> Reset to Defaults</a>
+            <button class="btn-save"><i class="fa-solid fa-floppy-disk"></i> Save All Settings</button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

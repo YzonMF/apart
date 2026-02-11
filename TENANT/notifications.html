@@ -12,82 +12,111 @@
 
 <body>
 <div class="app">
-  <input type="checkbox" id="menu-toggle">
-
-  <div class="sidebar">
-    <label for="menu-toggle" class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-
+  <aside class="sidebar">
     <div class="menu-items">
       <a href="dashboard.html" class="icon-btn" title="Dashboard">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-chart-line"></i>
       </a>
       <a href="membership.html" class="icon-btn" title="My Room">
-        <i class="fa-solid fa-id-card"></i>
+        <i class="fa-solid fa-building"></i>
       </a>
       <a href="payments.html" class="icon-btn" title="Payments">
         <i class="fa-solid fa-credit-card"></i>
+      </a>
+      <a href="maintenance.html" class="icon-btn" title="Maintenance">
+        <i class="fa-solid fa-tools"></i>
       </a>
       <a href="notifications.html" class="icon-btn active" title="Notifications">
         <i class="fa-solid fa-bell"></i>
       </a>
       <a href="profile.html" class="icon-btn" title="Profile">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user-circle"></i>
+      </a>
+      <a href="settings.html" class="icon-btn" title="Settings">
+        <i class="fa-solid fa-gear"></i>
       </a>
       <a href="../index.html" class="icon-btn" title="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                </a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
     </div>
-  </div>
+  </aside>
 
-  <div class="content tenant-content">
-    <div class="container">
-      <div class="header">
-        <h1><i class="bi bi-bell"></i> Notifications</h1>
-        <p>Stay updated with building announcements and alerts</p>
+  <main class="content">
+    <div class="content-inner">
+      <div class="container">
+
+        <div class="header">
+          <h1><i class="bi bi-bell"></i> Notifications</h1>
+          <p>Stay updated with building announcements and alerts</p>
+        </div>
+
+        <div class="notifications">
+          <h2><i class="bi bi-clock-history"></i> Recent Notifications</h2>
+
+          <div class="notification-item unread">
+            <h4><i class="bi bi-check-circle"></i> Payment Confirmed</h4>
+            <p>Your January 2026 rent payment of ₱12,000.00 has been received and processed successfully.</p>
+            <span class="date">Today, 9:30 AM</span>
+            <div class="notification-options">
+              <a href="#"><i class="bi bi-check"></i> Mark as read</a>
+            </div>
+          </div>
+
+          <div class="notification-item unread">
+            <h4><i class="bi bi-tools"></i> Maintenance Update</h4>
+            <p>Your maintenance request has been scheduled for February 2, 2026. Technician will arrive between 9:00 AM - 12:00 PM.</p>
+            <span class="date">Yesterday, 2:15 PM</span>
+            <div class="notification-options">
+              <a href="#"><i class="bi bi-check"></i> Mark as read</a>
+              <a href="maintenance.html"><i class="bi bi-eye"></i> View details</a>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-building"></i> Building Water Interruption</h4>
+            <p>Scheduled water maintenance on February 5, 2026 from 9:00 AM to 3:00 PM. Please store water in advance.</p>
+            <span class="date">January 30, 2026</span>
+          </div>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-exclamation-triangle"></i> Fire Drill Scheduled</h4>
+            <p>Building-wide fire drill scheduled for February 10, 2026 at 10:00 AM. Participation is mandatory for all tenants.</p>
+            <span class="date">January 28, 2026</span>
+          </div>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-cash-coin"></i> Rent Due Reminder</h4>
+            <p>Friendly reminder: February rent is due on February 5, 2026. Late payments incur a 5% penalty fee.</p>
+            <span class="date">January 25, 2026</span>
+          </div>
+
+          <div class="notification-item">
+            <h4><i class="bi bi-arrow-left-right"></i> Refund Notification</h4>
+            <p>Your security deposit refund has been approved. Processing time: 7-10 business days.</p>
+            <span class="date">January 20, 2026</span>
+          </div>
+        </div>
+
+        <div class="notification-filter">
+          <a href="#" class="filter-btn active">All</a>
+          <a href="#" class="filter-btn">Unread (2)</a>
+          <a href="#" class="filter-btn">Payments</a>
+          <a href="#" class="filter-btn">Maintenance</a>
+          <a href="#" class="filter-btn">Announcements</a>
+        </div>
+
+        <div class="quick-actions">
+          <a href="#" class="action-btn">
+            <i class="bi bi-check-all"></i> Mark All as Read
+          </a>
+          <a href="#" class="action-btn">
+            <i class="bi bi-trash"></i> Clear Old Notifications
+          </a>
+        </div>
+
       </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-check-circle"></i> Payment Confirmed</h4>
-        <p>Your January 2026 rent payment of ₱12,000.00 has been received.</p>
-        <span class="date">Today, 9:30 AM</span>
-      </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-tools"></i> Maintenance Update</h4>
-        <p>Your maintenance request has been scheduled for February 2, 2026.</p>
-        <span class="date">Yesterday, 2:15 PM</span>
-      </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-building"></i> Building Water Interruption</h4>
-        <p>Scheduled water maintenance on February 5, 2026 from 9:00 AM to 3:00 PM.</p>
-        <span class="date">January 30, 2026</span>
-      </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-exclamation-triangle"></i> Fire Drill Scheduled</h4>
-        <p>Building-wide fire drill scheduled for February 10, 2026 at 10:00 AM.</p>
-        <span class="date">January 28, 2026</span>
-      </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-cash-coin"></i> Rent Due Reminder</h4>
-        <p>Friendly reminder: February rent is due on February 5, 2026.</p>
-        <span class="date">January 25, 2026</span>
-      </div>
-
-      <div class="notification-item">
-        <h4><i class="bi bi-arrow-left-right"></i> Refund Notification</h4>
-        <p>Your security deposit refund has been approved. Processing time: 7-10 days.</p>
-        <span class="date">January 20, 2026</span>
-      </div>
-
     </div>
-  </div>
+  </main>
 </div>
-
-
 </body>
 </html>
