@@ -1,0 +1,222 @@
+:root {
+--accent: #f5b400;
+--accent-hover: #e0a300;
+--dark: #000000;
+--text-primary: #222;
+--text-secondary: #666;
+--border-light: #e0e0e0;
+--bg-card: #ffffff;
+--bg-soft: #f9f9f9;
+--shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+--shadow-hover: 0 8px 24px rgba(245,180,0,0.15);
+--radius: 16px;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: linear-gradient(145deg, #f0f0f0 0%, #fafafa 100%);
+color: var(--text-primary);
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+line-height: 1.5;
+}
+
+/* ===== MAIN CONTAINER – centered card ===== */
+.approval-container {
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.approval-card {
+background: var(--bg-card);
+border-radius: var(--radius);
+padding: 40px 32px;
+box-shadow: var(--shadow-sm);
+border: 2px solid var(--border-light);
+transition: all 0.3s ease;
+text-align: center;
+position: relative;
+}
+
+.approval-card:hover {
+box-shadow: var(--shadow-hover);
+border-color: var(--accent);
+}
+
+/* ===== ICON ===== */
+.icon-wrapper {
+width: 96px;
+height: 96px;
+background: rgba(245, 180, 0, 0.08);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 24px;
+border: 2px dashed var(--accent);
+transition: 0.2s;
+}
+
+.icon-wrapper i {
+font-size: 48px;
+color: var(--accent);
+animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); opacity: 0.9; }
+50% { transform: scale(1.05); opacity: 1; }
+100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+font-size: 1.9rem;
+font-weight: 700;
+color: var(--dark);
+margin-bottom: 16px;
+letter-spacing: -0.02em;
+}
+
+.message {
+font-size: 1.1rem;
+color: var(--text-secondary);
+margin-bottom: 28px;
+max-width: 450px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* ===== INFO BOX (status hint) ===== */
+.info-box {
+background: rgba(245, 180, 0, 0.06);
+border-left: 6px solid var(--accent);
+padding: 16px 20px;
+border-radius: 12px;
+display: flex;
+align-items: center;
+gap: 14px;
+text-align: left;
+margin-bottom: 32px;
+font-size: 0.98rem;
+color: #3a3a3a;
+border: 1px solid rgba(245,180,0,0.2);
+}
+
+.info-box i {
+font-size: 1.4rem;
+color: var(--accent);
+flex-shrink: 0;
+}
+
+.info-box span {
+line-height: 1.5;
+}
+
+/* ===== DEMO SECTION ===== */
+.demo-label {
+font-size: 0.95rem;
+color: #888;
+margin-bottom: 12px;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 600;
+}
+
+.demo-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+background: var(--accent);
+color: var(--dark);
+font-weight: 700;
+font-size: 1.2rem;
+padding: 18px 36px;
+border-radius: 50px;
+text-decoration: none;
+border: 2px solid var(--accent);
+transition: all 0.2s ease;
+width: 100%;
+max-width: 380px;
+margin: 0 auto 24px;
+box-shadow: 0 4px 12px rgba(245,180,0,0.3);
+}
+
+.demo-btn i {
+font-size: 1.2rem;
+transition: transform 0.2s;
+}
+
+.demo-btn:hover {
+background: var(--accent-hover);
+border-color: var(--accent-hover);
+transform: translateY(-3px);
+box-shadow: 0 12px 24px rgba(245,180,0,0.4);
+}
+
+.demo-btn:hover i {
+transform: rotate(10deg);
+}
+
+/* ===== FOOTER LINKS ===== */
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 28px;
+margin-top: 20px;
+font-size: 0.92rem;
+flex-wrap: wrap;
+border-top: 1px solid #eee;
+padding-top: 28px;
+}
+
+.footer-links a {
+color: var(--text-secondary);
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+transition: color 0.2s;
+font-weight: 500;
+}
+
+.footer-links a:hover {
+color: var(--accent);
+}
+
+.footer-links i {
+font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+body { padding: 16px; }
+.approval-card { padding: 30px 20px; }
+h1 { font-size: 1.6rem; }
+.icon-wrapper { width: 80px; height: 80px; }
+.icon-wrapper i { font-size: 38px; }
+.demo-btn { font-size: 1.1rem; padding: 16px 24px; }
+.footer-links { gap: 16px; flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 360px) {
+.info-box { flex-direction: column; text-align: center; }
+}
+
+/* ===== PRINT / REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+.icon-wrapper i { animation: none; }
+.demo-btn:hover { transform: none; }
+}
+
