@@ -11,33 +11,33 @@
 <body>
     <div class="app">
         <aside class="sidebar">
-    <div class="menu-items">
-        <a href="landowner.html" class="icon-btn" title="Dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-        </a>
-        <a href="profile.html" class="icon-btn" title="Profile">
-            <i class="fa-solid fa-user-circle"></i>
-        </a>
-        <a href="floor.html" class="icon-btn active" title="Properties">
-            <i class="fa-solid fa-building"></i>
-        </a>
-        <a href="payments.html" class="icon-btn" title="Payments">
-            <i class="fa-solid fa-credit-card"></i>
-        </a>
-        <a href="notifications.html" class="icon-btn" title="Notifications">
-            <i class="fa-solid fa-bell"></i>
-        </a>
-        <a href="reports.html" class="icon-btn" title="Reports">
-            <i class="fa-solid fa-chart-bar"></i>
-        </a>
-        <a href="settings.html" class="icon-btn" title="Settings">
-            <i class="fa-solid fa-gear"></i>
-        </a>
-        <a href="../index.html" class="icon-btn" title="Logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </a>
-    </div>
-</aside>
+            <div class="menu-items">
+                <a href="landowner.html" class="icon-btn" title="Dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                </a>
+                <a href="profile.html" class="icon-btn" title="Profile">
+                    <i class="fa-solid fa-user-circle"></i>
+                </a>
+                <a href="floor.html" class="icon-btn active" title="Properties">
+                    <i class="fa-solid fa-building"></i>
+                </a>
+                <a href="payments.html" class="icon-btn" title="Payments">
+                    <i class="fa-solid fa-credit-card"></i>
+                </a>
+                <a href="notifications.html" class="icon-btn" title="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                </a>
+                <a href="reports.html" class="icon-btn" title="Reports">
+                    <i class="fa-solid fa-chart-bar"></i>
+                </a>
+                <a href="settings.html" class="icon-btn" title="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="../index.html" class="icon-btn" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        </aside>
 
         <div class="content">
             <div class="floor-container">
@@ -109,7 +109,6 @@
                                 <p class="stat-number">4</p>
                             </div>
                         </div>
-                        
                         <div class="stat-card occupied">
                             <div class="stat-icon">
                                 <i class="fa-solid fa-user-check"></i>
@@ -119,7 +118,6 @@
                                 <p class="stat-number">2</p>
                             </div>
                         </div>
-                        
                         <div class="stat-card vacant">
                             <div class="stat-icon">
                                 <i class="fa-solid fa-user-slash"></i>
@@ -129,7 +127,6 @@
                                 <p class="stat-number">1</p>
                             </div>
                         </div>
-                        
                         <div class="stat-card maintenance">
                             <div class="stat-icon">
                                 <i class="fa-solid fa-tools"></i>
@@ -141,29 +138,26 @@
                         </div>
                     </div>
 
-                    <!-- Room Grid -->
+                    <!-- Room Grid – Each unit now links to room_detail.html -->
                     <div class="unit-grid-section">
                         <h4><i class="fa-solid fa-grip"></i> Room Management</h4>
                         <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
                             Click on any room to view details and manage
                         </p>
                         <div class="unit-grid">
-                            <a href="#room-101" class="unit occupied" title="Room 101 - John Smith">
+                            <a href="roomdetail.html?id=101" class="unit occupied" title="Room 101 - John Smith">
                                 <span>101</span>
                                 <small>Occupied</small>
                             </a>
-                            
-                            <a href="#room-102" class="unit vacant" title="Room 102 - Vacant">
+                            <a href="roomdetail.html?id=102" class="unit vacant" title="Room 102 - Vacant">
                                 <span>102</span>
                                 <small>Vacant</small>
                             </a>
-                            
-                            <a href="#room-103" class="unit maintenance" title="Room 103 - Maintenance">
+                            <a href="roomdetail.html?id=103" class="unit maintenance" title="Room 103 - Maintenance">
                                 <span>103</span>
                                 <small>Maintenance</small>
                             </a>
-                            
-                            <a href="#room-104" class="unit occupied" title="Room 104 - Sarah Johnson">
+                            <a href="roomdetail.html?id=104" class="unit occupied" title="Room 104 - Sarah Johnson">
                                 <span>104</span>
                                 <small>Occupied</small>
                             </a>
@@ -177,119 +171,26 @@
                     </div>
                 </section>
 
-                <section id="room-101" class="room-dashboard">
-                    <div class="room-header">
-                        <a href="#floor-ground" class="back-link">
-                            <i class="fa-solid fa-arrow-left"></i> Back to Floor
-                        </a>
-                        <h2><i class="fa-solid fa-door-open"></i> Room 101</h2>
+                <!-- 1st Floor Section (placeholder) -->
+                <section id="floor-first" class="floor-details">
+                    <div class="details-header">
+                        <h3><i class="fa-solid fa-map"></i> 1st Floor Layout</h3>
+                        <button type="button" class="btn-edit" onclick="location.href='#edit-floor'">
+                            <i class="fa-solid fa-pen"></i> Edit Floor
+                        </button>
                     </div>
+                    <p style="padding: 20px; color: #666;">Floor details and units go here.</p>
+                </section>
 
-                    <div class="room-status-badge">
-                        <div>
-                            <strong>Current Status</strong>
-                            <span class="status occupied">Occupied</span>
-                        </div>
-                        <span class="last-updated">Last updated: 2 hours ago</span>
+                <!-- 2nd Floor Section (placeholder) -->
+                <section id="floor-second" class="floor-details">
+                    <div class="details-header">
+                        <h3><i class="fa-solid fa-map"></i> 2nd Floor Layout</h3>
+                        <button type="button" class="btn-edit" onclick="location.href='#edit-floor'">
+                            <i class="fa-solid fa-pen"></i> Edit Floor
+                        </button>
                     </div>
-
-                    <div class="room-details-grid">
-                        <div class="detail-card">
-                            <div class="detail-icon">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h4>Current Tenant</h4>
-                                <p>John Smith</p>
-                                <small>Lease ends: Dec 31, 2025</small>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <div class="detail-icon">
-                                <i class="fa-solid fa-money-bill-wave"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h4>Monthly Rent</h4>
-                                <p>₱12,000</p>
-                                <small>Paid on time</small>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <div class="detail-icon">
-                                <i class="fa-solid fa-ruler-combined"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h4>Room Size</h4>
-                                <p>35 sqm</p>
-                                <small>Studio type</small>
-                            </div>
-                        </div>
-
-                        <div class="detail-card">
-                            <div class="detail-icon">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                            <div class="detail-content">
-                                <h4>Move-in Date</h4>
-                                <p>Jan 1, 2024</p>
-                                <small>2 years contract</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="room-actions">
-                        <h3><i class="fa-solid fa-list-check"></i> Room Actions</h3>
-                        <div class="action-grid">
-                            <div class="action-card">
-                                <div class="action-icon">
-                                    <i class="fa-solid fa-edit"></i>
-                                </div>
-                                <h4>Update Room Status</h4>
-                                <form class="status-form">
-                                    <select class="form-select">
-                                        <option value="occupied">Occupied</option>
-                                        <option value="vacant">Vacant</option>
-                                        <option value="maintenance">Maintenance</option>
-                                    </select>
-                                    <button type="submit" class="btn-update">
-                                        <i class="fa-solid fa-check"></i> Update Status
-                                    </button>
-                                </form>
-                            </div>
-
-                            <div class="action-card">
-                                <div class="action-icon">
-                                    <i class="fa-solid fa-bell"></i>
-                                </div>
-                                <h4>Send Notification</h4>
-                                <form class="notification-form">
-                                    <input type="text" class="form-input" placeholder="Message subject">
-                                    <textarea class="form-input" placeholder="Message content"></textarea>
-                                    <button type="submit" class="btn-send">
-                                        <i class="fa-solid fa-paper-plane"></i> Send Message
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quick Actions -->
-                    <div class="quick-actions">
-                        <h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
-                        <div class="action-buttons">
-                            <a href="#" class="action-btn">
-                                <i class="fa-solid fa-file-contract"></i> View Lease
-                            </a>
-                            <a href="#" class="action-btn">
-                                <i class="fa-solid fa-receipt"></i> Payment History
-                            </a>
-                            <a href="#" class="action-btn">
-                                <i class="fa-solid fa-comments"></i> Contact Tenant
-                            </a>
-                        </div>
-                    </div>
+                    <p style="padding: 20px; color: #666;">Floor details and units go here.</p>
                 </section>
 
                 <!-- Add Room Section -->
@@ -300,7 +201,6 @@
                         </a>
                         <h2><i class="fa-solid fa-circle-plus"></i> Add New Room</h2>
                     </div>
-
                     <div class="add-room-form">
                         <form action="#" method="post">
                             <div class="form-row">
@@ -318,7 +218,6 @@
                                     </select>
                                 </div>
                             </div>
-                            
                             <div class="form-row">
                                 <div class="form-group">
                                     <label><i class="fa-solid fa-ruler-combined"></i> Size (sqm)</label>
@@ -329,25 +228,15 @@
                                     <input type="number" name="monthly-rent" placeholder="e.g., 12000" required>
                                 </div>
                             </div>
-                            
                             <div class="form-group">
                                 <label><i class="fa-solid fa-list"></i> Room Features</label>
                                 <div class="features-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="features[]" value="kitchen"> Kitchen
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="features[]" value="bathroom"> Private Bathroom
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="features[]" value="balcony"> Balcony
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="features[]" value="ac"> Air Conditioning
-                                    </label>
+                                    <label><input type="checkbox" name="features[]" value="kitchen"> Kitchen</label>
+                                    <label><input type="checkbox" name="features[]" value="bathroom"> Private Bathroom</label>
+                                    <label><input type="checkbox" name="features[]" value="balcony"> Balcony</label>
+                                    <label><input type="checkbox" name="features[]" value="ac"> Air Conditioning</label>
                                 </div>
                             </div>
-                            
                             <div class="form-group">
                                 <label><i class="fa-solid fa-circle-info"></i> Initial Status</label>
                                 <select name="initial-status" required>
@@ -356,7 +245,6 @@
                                     <option value="maintenance">Under Maintenance</option>
                                 </select>
                             </div>
-                            
                             <div class="form-actions">
                                 <button type="submit" class="btn-create">
                                     <i class="fa-solid fa-circle-plus"></i> Create Room
@@ -377,7 +265,6 @@
                         </a>
                         <h2><i class="fa-solid fa-circle-plus"></i> Add New Floor</h2>
                     </div>
-
                     <div class="add-floor-form">
                         <form action="#" method="post">
                             <div class="form-group">
@@ -388,17 +275,14 @@
                                     <option value="building-c">Building C - Garden Wing</option>
                                 </select>
                             </div>
-                            
                             <div class="form-group">
                                 <label><i class="fa-solid fa-layer-group"></i> Floor Number/Name</label>
                                 <input type="text" name="floor-name" placeholder="e.g., 4th Floor" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label><i class="fa-solid fa-door-open"></i> Number of Rooms</label>
                                 <input type="number" name="room-count" placeholder="e.g., 4" required>
                             </div>
-                            
                             <div class="form-actions">
                                 <button type="submit" class="btn-create">
                                     <i class="fa-solid fa-circle-plus"></i> Create Floor

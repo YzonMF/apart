@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Management · Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="MCSS/sidebar.css">
+    <link rel="stylesheet" href="MCSS/floor.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="menu-items">
+                <a href="landowner.html" class="icon-btn" title="Dashboard"><i class="fa-solid fa-chart-line"></i></a>
+                <a href="profile.html" class="icon-btn" title="Profile"><i class="fa-solid fa-user-circle"></i></a>
+                <a href="floor.html" class="icon-btn active" title="Properties"><i class="fa-solid fa-building"></i></a>
+                <a href="payments.html" class="icon-btn" title="Payments"><i class="fa-solid fa-credit-card"></i></a>
+                <a href="notifications.html" class="icon-btn" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+                <a href="reports.html" class="icon-btn" title="Reports"><i class="fa-solid fa-chart-bar"></i></a>
+                <a href="settings.html" class="icon-btn" title="Settings"><i class="fa-solid fa-gear"></i></a>
+                <a href="../index.html" class="icon-btn" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <div class="content">
+            <div class="floor-container">
+                <div class="room-header">
+                    <a href="floor.html#floor-ground" class="back-link">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Floor
+                    </a>
+                    <h2><i class="fa-solid fa-door-open"></i> Room 101 · Management</h2>
+                </div>
+
+                <div class="room-status-badge">
+                    <div>
+                        <strong>Current Status</strong>
+                        <span class="status occupied">Occupied</span>
+                    </div>
+                    <span class="last-updated">Last updated: 2 hours ago</span>
+                </div>
+
+                <div class="room-details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fa-solid fa-user"></i></div>
+                        <div class="detail-content">
+                            <h4>Current Tenant</h4>
+                            <p>John Smith</p>
+                            <small>Lease ends: Dec 31, 2025</small>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+                        <div class="detail-content">
+                            <h4>Monthly Rent</h4>
+                            <p>₱12,000</p>
+                            <small>Paid on time</small>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <div class="detail-content">
+                            <h4>Room Size</h4>
+                            <p>35 sqm</p>
+                            <small>Studio type</small>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="detail-content">
+                            <h4>Move-in Date</h4>
+                            <p>Jan 1, 2024</p>
+                            <small>2 years contract</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-description-section">
+                    <h3><i class="fa-solid fa-align-left"></i> Room Description</h3>
+                    <div class="description-card">
+                        <textarea class="form-input description-textarea" placeholder="Add a detailed description of this room (amenities, special features, notes, etc.)" readonly>Cozy studio unit with city view. Includes built-in cabinets, split-type air conditioner, and high-speed internet ready. Recently repainted.</textarea>
+                        <div class="description-actions">
+                            <span class="btn-save-description disabled">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Description
+                            </span>
+                            <span class="hint-text">(Demo – static preview)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-photo-section">
+                    <h3><i class="fa-solid fa-camera"></i> Room Photos</h3>
+                    
+                    <div class="photo-upload-container">
+                        <span class="btn-upload disabled">
+                            <i class="fa-solid fa-cloud-upload-alt"></i> Upload New Photo
+                        </span>
+                        <span class="upload-hint">Demo – file upload disabled (static preview)</span>
+                    </div>
+
+                    <div class="photo-grid">
+                        <div class="photo-item primary-photo">
+                            <img src="https://via.placeholder.com/300x200/f5b400/ffffff?text=Room+101" alt="Room photo">
+                            <div class="photo-overlay">
+                                <span class="btn-delete-photo disabled" title="Delete"><i class="fa-solid fa-trash"></i></span>
+                                <span class="btn-set-primary disabled" title="Primary"><i class="fa-solid fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://via.placeholder.com/300x200/000000/f5b400?text=Kitchen" alt="Kitchen">
+                            <div class="photo-overlay">
+                                <span class="btn-delete-photo disabled" title="Delete"><i class="fa-solid fa-trash"></i></span>
+                                <span class="btn-set-primary disabled" title="Set as primary"><i class="fa-solid fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://via.placeholder.com/300x200/333333/f5b400?text=Bathroom" alt="Bathroom">
+                            <div class="photo-overlay">
+                                <span class="btn-delete-photo disabled" title="Delete"><i class="fa-solid fa-trash"></i></span>
+                                <span class="btn-set-primary disabled" title="Set as primary"><i class="fa-solid fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="photo-note">
+                        <i class="fa-solid fa-info-circle"></i> Static demo – photos are placeholders. 
+                        In a real implementation, upload would be handled by the server.
+                    </p>
+                </div>
+
+                <div class="room-actions">
+                    <h3><i class="fa-solid fa-list-check"></i> Room Actions</h3>
+                    <div class="action-grid">
+                        <div class="action-card">
+                            <div class="action-icon"><i class="fa-solid fa-edit"></i></div>
+                            <h4>Update Room Status</h4>
+                            <form class="status-form" onsubmit="return false;">
+                                <select class="form-select">
+                                    <option value="occupied" selected>Occupied</option>
+                                    <option value="vacant">Vacant</option>
+                                    <option value="maintenance">Maintenance</option>
+                                </select>
+                                <button type="submit" class="btn-update" disabled>
+                                    <i class="fa-solid fa-check"></i> Update Status
+                                </button>
+                                <span class="demo-note">(demo)</span>
+                            </form>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon"><i class="fa-solid fa-bell"></i></div>
+                            <h4>Send Notification</h4>
+                            <form class="notification-form" onsubmit="return false;">
+                                <input type="text" class="form-input" placeholder="Message subject" value="Maintenance Notice" readonly>
+                                <textarea class="form-input" placeholder="Message content" readonly>Scheduled inspection on Friday.</textarea>
+                                <button type="submit" class="btn-send" disabled>
+                                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                                </button>
+                                <span class="demo-note">(demo)</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="#" class="action-btn disabled" onclick="return false;">View Lease</a>
+                        <a href="#" class="action-btn disabled" onclick="return false;">Payment History</a>
+                        <a href="#" class="action-btn disabled" onclick="return false;">Contact Tenant</a>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <span class="btn-save disabled">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                    </span>
+                    <span class="btn-print disabled">
+                        <i class="fa-solid fa-print"></i> Print Report
+                    </span>
+                    <span class="btn-refresh disabled">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
