@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Setup · Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="MCSS/setup.css">
+</head>
+<body>
+    <div class="setup-wrapper">
+        <div class="setup-card">
+            <h1><i class="fa-solid fa-building"></i> Building Setup</h1>
+            <p style="margin-bottom:20px; color:#666;">Configure your property before opening for tenants.</p>
+
+            <!-- 1. Building Details -->
+            <div class="form-section">
+                <h2><i class="fa-solid fa-city"></i> 1. Building Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-tag"></i> Building Name</label>
+                        <input type="text" value="Sunset Tower" placeholder="e.g., Main Building">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-map-pin"></i> Address</label>
+                        <input type="text" value="123 Business Ave" placeholder="Street address">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-layer-group"></i> Total Floors</label>
+                        <input type="number" value="5" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Floors & Rooms -->
+            <div class="form-section">
+                <h2><i class="fa-solid fa-floor-plan"></i> 2. Floors & Rooms</h2>
+                <div style="display:grid; gap:20px;">
+                    <div class="room-example">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h3 style="font-size:1.2rem;"><i class="fa-solid fa-door-open"></i> Ground Floor</h3>
+                            <span style="background:#f5b40020; padding:6px 16px; border-radius:30px;">4 rooms</span>
+                        </div>
+                        <div class="form-grid" style="margin-top:15px;">
+                            <div class="form-group">
+                                <label>Rooms on this floor</label>
+                                <input type="number" value="4" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Default room capacity</label>
+                                <select>
+                                    <option>2 persons</option>
+                                    <option>3 persons</option>
+                                    <option>4 persons</option>
+                                    <option>1 person</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-example">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h3 style="font-size:1.2rem;"><i class="fa-solid fa-door-closed"></i> 1st Floor</h3>
+                            <span style="background:#f5b40020; padding:6px 16px; border-radius:30px;">4 rooms</span>
+                        </div>
+                        <div class="form-grid" style="margin-top:15px;">
+                            <div class="form-group">
+                                <label>Rooms on this floor</label>
+                                <input type="number" value="4" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Default room capacity</label>
+                                <select>
+                                    <option>2 persons</option>
+                                    <option>3 persons</option>
+                                    <option>4 persons</option>
+                                    <option>1 person</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" style="display:inline-block; margin-top:15px; color:#f5b400; text-decoration:none;" onclick="return false;">
+                    <i class="fa-solid fa-plus-circle"></i> Add another floor (demo)
+                </a>
+            </div>
+
+            <!-- 3. Invite Codes -->
+            <div class="form-section">
+                <h2><i class="fa-solid fa-ticket"></i> 3. Invite Codes</h2>
+                <p style="margin-bottom:15px;">Each room gets a unique code for tenant registration.</p>
+                <div class="invite-code-grid">
+                    <div class="invite-item">
+                        <span><strong>G-01</strong></span>
+                        <span class="invite-code">BLD-A-001</span>
+                    </div>
+                    <div class="invite-item">
+                        <span><strong>G-02</strong></span>
+                        <span class="invite-code">BLD-A-002</span>
+                    </div>
+                    <div class="invite-item">
+                        <span><strong>G-03</strong></span>
+                        <span class="invite-code">BLD-A-003</span>
+                    </div>
+                    <div class="invite-item">
+                        <span><strong>G-04</strong></span>
+                        <span class="invite-code">BLD-A-004</span>
+                    </div>
+                    <div class="invite-item">
+                        <span><strong>1-01</strong></span>
+                        <span class="invite-code">BLD-A-005</span>
+                    </div>
+                    <div class="invite-item">
+                        <span><strong>1-02</strong></span>
+                        <span class="invite-code">BLD-A-006</span>
+                    </div>
+                </div>
+
+                <!-- SAVE BUTTON – opens confirmation modal via :target -->
+                <a href="#confirm-save" class="btn-save-setup">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Configuration
+                </a>
+            </div>
+
+            <!-- CONFIRMATION MODAL (hidden by default, shown when #confirm-save is targeted) -->
+            <div id="confirm-save" class="confirm-overlay">
+                <div class="confirm-modal">
+                    <h3><i class="fa-solid fa-circle-check"></i> Confirm Save</h3>
+                    <p>Are you sure you want to save this configuration and proceed to the dashboard?</p>
+                    <div class="confirm-actions">
+                        <a href="landowner.html" class="btn-confirm-yes">
+                            <i class="fa-solid fa-check"></i> Yes, proceed
+                        </a>
+                        <a href="#" class="btn-confirm-no">
+                            <i class="fa-solid fa-times"></i> Cancel
+                        </a>
+                    </div>
+                    <p style="margin-top:20px; font-size:0.85rem; color:#777;">(Demo – no data is actually saved)</p>
+                </div>
+            </div>
+
+            <div class="demo-hint">
+                <i class="fa-solid fa-info-circle"></i> This is a static preview. Clicking "Save Configuration" opens a confirmation; "Yes" takes you to the dashboard.
+            </div>
+
+            <a href="landowner.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Skip to Dashboard
+            </a>
+            <a href="approval.html" class="back-link" style="margin-left:20px;">
+                <i class="fa-solid fa-clock"></i> Back to Approval
+            </a>
+        </div>
+    </div>
+</body>
+</html>

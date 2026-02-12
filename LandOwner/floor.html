@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Floors - Property Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="MCSS/floor.css">
     <link rel="stylesheet" href="MCSS/sidebar.css">
-    <title>Floor Management</title>
+    <link rel="stylesheet" href="MCSS/floor.css">
 </head>
 <body>
     <div class="app">
@@ -20,9 +20,6 @@
                 </a>
                 <a href="floor.html" class="icon-btn active" title="Properties">
                     <i class="fa-solid fa-building"></i>
-                </a>
-                <a href="payments.html" class="icon-btn" title="Payments">
-                    <i class="fa-solid fa-credit-card"></i>
                 </a>
                 <a href="notifications.html" class="icon-btn" title="Notifications">
                     <i class="fa-solid fa-bell"></i>
@@ -40,273 +37,473 @@
         </aside>
 
         <div class="content">
-            <div class="floor-container">
-                <!-- Floor Header -->
-                <div class="floor-header">
-                    <h1><i class="fa-solid fa-building"></i> Floor & Room Management</h1>
-                    <p>Manage floors, rooms, and room-specific operations</p>
-                </div>
+            <div class="floors-container">
+                <h1 class="page-title">
+                    <i class="fa-solid fa-building"></i> Property Management
+                </h1>
 
-                <!-- Building Selection -->
-                <div class="building-section">
-                    <div class="form-group">
-                        <label for="building-select">
-                            <i class="fa-solid fa-city"></i> Select Building
-                        </label>
-                        <select id="building-select" class="form-select">
-                            <option value="building-a">Building A</option>
-                            <option value="building-b">Building B</option>
-                            <option value="building-c">Building C</option>
-                        </select>
+                <div class="property-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-door-open"></i></div>
+                        <div class="stat-content">
+                            <h3>Total Rooms</h3>
+                            <p class="stat-value">20</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon occupied"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-content">
+                            <h3>Occupied</h3>
+                            <p class="stat-value">10</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon vacant"><i class="fa-solid fa-door-closed"></i></div>
+                        <div class="stat-content">
+                            <h3>Vacant</h3>
+                            <p class="stat-value">10</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon rate"><i class="fa-solid fa-chart-pie"></i></div>
+                        <div class="stat-content">
+                            <h3>Occupancy Rate</h3>
+                            <p class="stat-value">50%</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Floor Navigation -->
-                <div class="floor-navigation">
-                    <div class="floor-nav-header">
-                        <h2><i class="fa-solid fa-layer-group"></i> Floors</h2>
-                        <button type="button" class="btn-add-floor" onclick="location.href='#add-floor'">
-                            <i class="fa-solid fa-plus"></i> Add Floor
-                        </button>
-                    </div>
+                <!-- GROUND FLOOR -->
+                <details class="floor-section" open>
+                    <summary class="floor-header">
+                        <div class="floor-title">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <h2>Ground Floor</h2>
+                            <span class="floor-badge">4 Rooms</span>
+                        </div>
+                        <div class="floor-occupancy">
+                            <span class="occupancy-text">Occupancy: 2/4</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </summary>
                     
-                    <div class="floor-list">
-                        <div class="floor-item active" onclick="location.href='#floor-ground'">
-                            <i class="fa-solid fa-door-open"></i>
-                            <span>Ground Floor</span>
-                            <span class="unit-count">4 Units</span>
-                        </div>
-                        <div class="floor-item" onclick="location.href='#floor-first'">
-                            <i class="fa-solid fa-door-closed"></i>
-                            <span>1st Floor</span>
-                            <span class="unit-count">4 Units</span>
-                        </div>
-                        <div class="floor-item" onclick="location.href='#floor-second'">
-                            <i class="fa-solid fa-door-closed"></i>
-                            <span>2nd Floor</span>
-                            <span class="unit-count">4 Units</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ground Floor Section (Active by default) -->
-                <section id="floor-ground" class="floor-details active">
-                    <div class="details-header">
-                        <h3><i class="fa-solid fa-map"></i> Ground Floor Layout</h3>
-                        <button type="button" class="btn-edit" onclick="location.href='#edit-floor'">
-                            <i class="fa-solid fa-pen"></i> Edit Floor
-                        </button>
-                    </div>
-
-                    <!-- Floor Statistics -->
-                    <div class="floor-stats">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-door-open"></i>
+                    <div class="rooms-grid">
+                        <!-- Room G-01 - Occupied 2/2 -->
+                        <a href="roomdetail.html" class="room-card occupied-full">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>G-01</span>
+                                </div>
+                                <div class="occupancy-badge full">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>2/2</span>
+                                </div>
                             </div>
-                            <div class="stat-content">
-                                <h4>Total Units</h4>
-                                <p class="stat-number">4</p>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>Fully Occupied</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-001</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-card occupied">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-user-check"></i>
+                            <div class="room-status status-full">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Full</span>
                             </div>
-                            <div class="stat-content">
-                                <h4>Occupied</h4>
-                                <p class="stat-number">2</p>
-                            </div>
-                        </div>
-                        <div class="stat-card vacant">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-user-slash"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h4>Vacant</h4>
-                                <p class="stat-number">1</p>
-                            </div>
-                        </div>
-                        <div class="stat-card maintenance">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-tools"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h4>Maintenance</h4>
-                                <p class="stat-number">1</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Room Grid – Each unit now links to room_detail.html -->
-                    <div class="unit-grid-section">
-                        <h4><i class="fa-solid fa-grip"></i> Room Management</h4>
-                        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-                            Click on any room to view details and manage
-                        </p>
-                        <div class="unit-grid">
-                            <a href="roomdetail.html?id=101" class="unit occupied" title="Room 101 - John Smith">
-                                <span>101</span>
-                                <small>Occupied</small>
-                            </a>
-                            <a href="roomdetail.html?id=102" class="unit vacant" title="Room 102 - Vacant">
-                                <span>102</span>
-                                <small>Vacant</small>
-                            </a>
-                            <a href="roomdetail.html?id=103" class="unit maintenance" title="Room 103 - Maintenance">
-                                <span>103</span>
-                                <small>Maintenance</small>
-                            </a>
-                            <a href="roomdetail.html?id=104" class="unit occupied" title="Room 104 - Sarah Johnson">
-                                <span>104</span>
-                                <small>Occupied</small>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="add-room-section">
-                        <button type="button" class="btn-add-room" onclick="location.href='#add-room'">
-                            <i class="fa-solid fa-circle-plus"></i> Add New Room
-                        </button>
-                    </div>
-                </section>
-
-                <!-- 1st Floor Section (placeholder) -->
-                <section id="floor-first" class="floor-details">
-                    <div class="details-header">
-                        <h3><i class="fa-solid fa-map"></i> 1st Floor Layout</h3>
-                        <button type="button" class="btn-edit" onclick="location.href='#edit-floor'">
-                            <i class="fa-solid fa-pen"></i> Edit Floor
-                        </button>
-                    </div>
-                    <p style="padding: 20px; color: #666;">Floor details and units go here.</p>
-                </section>
-
-                <!-- 2nd Floor Section (placeholder) -->
-                <section id="floor-second" class="floor-details">
-                    <div class="details-header">
-                        <h3><i class="fa-solid fa-map"></i> 2nd Floor Layout</h3>
-                        <button type="button" class="btn-edit" onclick="location.href='#edit-floor'">
-                            <i class="fa-solid fa-pen"></i> Edit Floor
-                        </button>
-                    </div>
-                    <p style="padding: 20px; color: #666;">Floor details and units go here.</p>
-                </section>
-
-                <!-- Add Room Section -->
-                <section id="add-room" class="add-room-section">
-                    <div class="room-header">
-                        <a href="#floor-ground" class="back-link">
-                            <i class="fa-solid fa-arrow-left"></i> Back to Floor
                         </a>
-                        <h2><i class="fa-solid fa-circle-plus"></i> Add New Room</h2>
-                    </div>
-                    <div class="add-room-form">
-                        <form action="#" method="post">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label><i class="fa-solid fa-hashtag"></i> Room Number</label>
-                                    <input type="text" name="room-number" placeholder="e.g., 105" required>
-                                </div>
-                                <div class="form-group">
-                                    <label><i class="fa-solid fa-door-closed"></i> Room Type</label>
-                                    <select name="room-type" required>
-                                        <option value="">Select room type</option>
-                                        <option value="studio">Studio</option>
-                                        <option value="1-bedroom">1 Bedroom</option>
-                                        <option value="2-bedroom">2 Bedrooms</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label><i class="fa-solid fa-ruler-combined"></i> Size (sqm)</label>
-                                    <input type="number" name="room-size" placeholder="e.g., 35" required>
-                                </div>
-                                <div class="form-group">
-                                    <label><i class="fa-solid fa-money-bill-wave"></i> Monthly Rent</label>
-                                    <input type="number" name="monthly-rent" placeholder="e.g., 12000" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fa-solid fa-list"></i> Room Features</label>
-                                <div class="features-checkbox">
-                                    <label><input type="checkbox" name="features[]" value="kitchen"> Kitchen</label>
-                                    <label><input type="checkbox" name="features[]" value="bathroom"> Private Bathroom</label>
-                                    <label><input type="checkbox" name="features[]" value="balcony"> Balcony</label>
-                                    <label><input type="checkbox" name="features[]" value="ac"> Air Conditioning</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fa-solid fa-circle-info"></i> Initial Status</label>
-                                <select name="initial-status" required>
-                                    <option value="vacant">Vacant</option>
-                                    <option value="occupied">Occupied</option>
-                                    <option value="maintenance">Under Maintenance</option>
-                                </select>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn-create">
-                                    <i class="fa-solid fa-circle-plus"></i> Create Room
-                                </button>
-                                <a href="#floor-ground" class="btn-cancel">
-                                    <i class="fa-solid fa-times"></i> Cancel
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </section>
 
-                <!-- Add Floor Section -->
-                <section id="add-floor" class="add-floor-section">
-                    <div class="room-header">
-                        <a href="#floor-ground" class="back-link">
-                            <i class="fa-solid fa-arrow-left"></i> Back
+                        <!-- Room G-02 - Partially Occupied 1/2 -->
+                        <a href="roomdetail.html" class="room-card occupied-partial">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>G-02</span>
+                                </div>
+                                <div class="occupancy-badge partial">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>1/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>1 Space Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-002</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-partial">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Available</span>
+                            </div>
                         </a>
-                        <h2><i class="fa-solid fa-circle-plus"></i> Add New Floor</h2>
-                    </div>
-                    <div class="add-floor-form">
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label><i class="fa-solid fa-building"></i> Building</label>
-                                <select name="building" required>
-                                    <option value="building-a">Building A - Main Tower</option>
-                                    <option value="building-b">Building B - Annex</option>
-                                    <option value="building-c">Building C - Garden Wing</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fa-solid fa-layer-group"></i> Floor Number/Name</label>
-                                <input type="text" name="floor-name" placeholder="e.g., 4th Floor" required>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fa-solid fa-door-open"></i> Number of Rooms</label>
-                                <input type="number" name="room-count" placeholder="e.g., 4" required>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn-create">
-                                    <i class="fa-solid fa-circle-plus"></i> Create Floor
-                                </button>
-                                <a href="#floor-ground" class="btn-cancel">
-                                    <i class="fa-solid fa-times"></i> Cancel
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </section>
 
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button type="button" class="btn-save">
-                        <i class="fa-solid fa-floppy-disk"></i> Save Changes
-                    </button>
-                    <button type="button" class="btn-print">
-                        <i class="fa-solid fa-print"></i> Print Report
-                    </button>
-                    <button type="button" class="btn-refresh" onclick="location.reload()">
-                        <i class="fa-solid fa-rotate"></i> Refresh
-                    </button>
-                </div>
+                        <!-- Room G-03 - Vacant 0/2 -->
+                        <a href="roomdetail.html" class="room-card vacant">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-closed"></i>
+                                    <span>G-03</span>
+                                </div>
+                                <div class="occupancy-badge empty">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span>0/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>Fully Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-003</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-vacant">
+                                <i class="fa-solid fa-circle"></i>
+                                <span>Vacant</span>
+                            </div>
+                        </a>
+
+                        <!-- Room G-04 - Vacant 0/2 -->
+                        <a href="roomdetail.html" class="room-card vacant">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-closed"></i>
+                                    <span>G-04</span>
+                                </div>
+                                <div class="occupancy-badge empty">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span>0/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>Fully Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-004</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-vacant">
+                                <i class="fa-solid fa-circle"></i>
+                                <span>Vacant</span>
+                            </div>
+                        </a>
+                    </div>
+                </details>
+
+                <!-- FIRST FLOOR -->
+                <details class="floor-section" open>
+                    <summary class="floor-header">
+                        <div class="floor-title">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <h2>First Floor</h2>
+                            <span class="floor-badge">4 Rooms</span>
+                        </div>
+                        <div class="floor-occupancy">
+                            <span class="occupancy-text">Occupancy: 3/4</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </summary>
+                    
+                    <div class="rooms-grid">
+                        <!-- Room 1-01 - Occupied 2/2 -->
+                        <a href="roomdetail.html" class="room-card occupied-full">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>1-01</span>
+                                </div>
+                                <div class="occupancy-badge full">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>2/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>Fully Occupied</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-101</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-full">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Full</span>
+                            </div>
+                        </a>
+
+                        <!-- Room 1-02 - Occupied 2/2 -->
+                        <a href="roomdetail.html" class="room-card occupied-full">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>1-02</span>
+                                </div>
+                                <div class="occupancy-badge full">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>2/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>Fully Occupied</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-102</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-full">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Full</span>
+                            </div>
+                        </a>
+
+                        <!-- Room 1-03 - Partially Occupied 1/2 -->
+                        <a href="roomdetail.html" class="room-card occupied-partial">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>1-03</span>
+                                </div>
+                                <div class="occupancy-badge partial">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>1/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>1 Space Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-103</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-partial">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Available</span>
+                            </div>
+                        </a>
+
+                        <!-- Room 1-04 - Vacant 0/2 -->
+                        <a href="roomdetail.html" class="room-card vacant">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-closed"></i>
+                                    <span>1-04</span>
+                                </div>
+                                <div class="occupancy-badge empty">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span>0/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>Fully Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-104</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-vacant">
+                                <i class="fa-solid fa-circle"></i>
+                                <span>Vacant</span>
+                            </div>
+                        </a>
+                    </div>
+                </details>
+
+                <!-- SECOND FLOOR -->
+                <details class="floor-section">
+                    <summary class="floor-header">
+                        <div class="floor-title">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <h2>Second Floor</h2>
+                            <span class="floor-badge">4 Rooms</span>
+                        </div>
+                        <div class="floor-occupancy">
+                            <span class="occupancy-text">Occupancy: 3/4</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </summary>
+                    
+                    <div class="rooms-grid">
+                        <!-- Similar room cards for second floor -->
+                        <a href="roomdetail.html" class="room-card occupied-full">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>2-01</span>
+                                </div>
+                                <div class="occupancy-badge full">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>2/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>Fully Occupied</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-201</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-full">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Full</span>
+                            </div>
+                        </a>
+
+                        <a href="roomdetail.html" class="room-card occupied-partial">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>2-02</span>
+                                </div>
+                                <div class="occupancy-badge partial">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>1/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>1 Space Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-202</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-partial">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Available</span>
+                            </div>
+                        </a>
+
+                        <a href="roomdetail.html" class="room-card occupied-partial">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>2-03</span>
+                                </div>
+                                <div class="occupancy-badge partial">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>1/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>1 Space Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-203</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-partial">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Available</span>
+                            </div>
+                        </a>
+
+                        <a href="roomdetail.html" class="room-card vacant">
+                            <div class="room-header">
+                                <div class="room-number">
+                                    <i class="fa-solid fa-door-closed"></i>
+                                    <span>2-04</span>
+                                </div>
+                                <div class="occupancy-badge empty">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span>0/2</span>
+                                </div>
+                            </div>
+                            <div class="room-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>2 Bed Capacity</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span>Fully Available</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span>Code: BLD-A-204</span>
+                                </div>
+                            </div>
+                            <div class="room-status status-vacant">
+                                <i class="fa-solid fa-circle"></i>
+                                <span>Vacant</span>
+                            </div>
+                        </a>
+                    </div>
+                </details>
             </div>
         </div>
     </div>
