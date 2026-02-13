@@ -89,11 +89,121 @@
                 
                 <button type="submit" class="submitbtn">Register</button>
                 
+                <!-- Terms and Conditions Acceptance -->
+                <div class="terms-section">
+                    <label class="terms-checkbox">
+                        <input type="checkbox" name="accept_terms" id="accept_terms" required>
+                        <span>I agree to the <a href="#terms-modal" class="terms-link">Terms and Conditions</a> and <a href="#privacy-modal" class="terms-link">Privacy Policy</a></span>
+                    </label>
+                </div>
+
                 <p class="login">
                     Already have an account? <a href="index.html">Login</a>
                 </p>
             </form>
         </section>
+
+        <!-- Terms and Conditions Modal/Details -->
+        <details class="terms-modal" id="terms-modal">
+            <summary class="terms-modal-header">
+                <i class="bi bi-file-text"></i>
+                <span>Terms and Conditions & Privacy Policy</span>
+                <i class="bi bi-chevron-down toggle-icon"></i>
+            </summary>
+            <div class="terms-modal-content">
+                <div class="terms-document">
+                    <h3><i class="bi bi-shield-check"></i> Terms and Conditions and Privacy Policy</h3>
+                    
+                    <section class="terms-section-content">
+                        <h4>1. Acceptance of Terms</h4>
+                        <p>By accessing and using this property management platform, you agree to be bound by these Terms and Conditions and our Privacy Policy in compliance with the <strong>Data Privacy Act of 2012 (RA 10173)</strong>. If you do not agree, please refrain from using the website.</p>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>2. Definition of Roles</h4>
+                        <ul>
+                            <li><strong>Administrator:</strong> Responsible for technical support, security supervision, and user management.</li>
+                            <li><strong>Landlord:</strong> Users who register to provide building details, fixed room information, and floor plans.</li>
+                            <li><strong>Tenant:</strong> Users who register to view available rooms, room details (utilities, availability), and request room viewings.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>3. Data Privacy Agreement (RA 10173)</h4>
+                        <p>In accordance with the <strong>Data Privacy Act of 2012</strong>, we are committed to protecting your personal information. By registering an account, you provide explicit consent for the collection and processing of the following data:</p>
+                        <ul>
+                            <li><strong>For Landlords:</strong> Full name, contact details, property address/details, and business permit information.</li>
+                            <li><strong>For Tenants:</strong> Full name, contact details, viewing history, and room assignment records.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>4. Purpose of Data Collection</h4>
+                        <p>The personal data collected shall be used solely for the following purposes:</p>
+                        <ul>
+                            <li>To facilitate account registration and identity verification.</li>
+                            <li>To enable communication between Landlords and Tenants regarding room availability and viewings.</li>
+                            <li>To allow the Administrator to provide technical support and ensure the security of the platform.</li>
+                            <li>To maintain accurate records of rental agreements and payment transactions.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>5. Data Retention and Protection</h4>
+                        <p><strong>Security:</strong> We implement technical, organizational, and physical security measures (such as encryption and restricted access) to protect your data from unauthorized access or disclosure.</p>
+                        <p><strong>Retention:</strong> Your data will be stored only as long as your account is active or as needed to provide you with the services on this website. Upon account deletion, personal data will be securely removed within 30 days.</p>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>6. User Rights</h4>
+                        <p>Under the Data Privacy Act, users have the right to:</p>
+                        <ul>
+                            <li>Be informed that their personal data is being processed.</li>
+                            <li>Access their personal data stored in our system.</li>
+                            <li>Object to the processing of their data.</li>
+                            <li>Request the correction of inaccurate data.</li>
+                            <li>Request the deletion of their account and associated data.</li>
+                            <li>Data portability for their personal information.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>7. Limitation of Liability</h4>
+                        <p>The website serves as a platform to connect Landlords and Tenants. While we strive to maintain security, the Administrator is not liable for:</p>
+                        <ul>
+                            <li>Transactions or personal agreements made outside the platform's technical scope.</li>
+                            <li>Disputes between Landlords and Tenants regarding rental agreements.</li>
+                            <li>Property condition or accuracy of room descriptions provided by Landlords.</li>
+                            <li>Financial transactions conducted off-platform.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>8. User Responsibilities</h4>
+                        <p><strong>Both Landlords and Tenants agree to:</strong></p>
+                        <ul>
+                            <li>Provide accurate and truthful information during registration.</li>
+                            <li>Maintain the confidentiality of their account credentials.</li>
+                            <li>Use the platform in compliance with applicable laws and regulations.</li>
+                            <li>Report any security breaches or unauthorized access immediately.</li>
+                            <li>Respect the privacy and rights of other users.</li>
+                        </ul>
+                    </section>
+
+                    <section class="terms-section-content">
+                        <h4>9. Contact Information</h4>
+                        <p>For questions regarding these Terms and Conditions or Privacy Policy, or to exercise your data privacy rights, please contact:</p>
+                        <p><strong>Data Protection Officer</strong><br>
+                        Email: privacy@propertymanagement.com<br>
+                        Phone: +63 XXX XXX XXXX</p>
+                    </section>
+
+                    <div class="terms-acceptance">
+                        <p><i class="bi bi-info-circle"></i> By checking the box above and proceeding with registration, you acknowledge that you have read, understood, and agree to these Terms and Conditions and Privacy Policy.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
     </div>
 </body>
 </html>

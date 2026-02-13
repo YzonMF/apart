@@ -21,6 +21,9 @@
                 <a href="floor.html" class="icon-btn active" title="Properties">
                     <i class="fa-solid fa-building"></i>
                 </a>
+                <a href="payments.html" class="icon-btn" title="Payments">
+                    <i class="fa-solid fa-credit-card"></i>
+                </a>
                 <a href="notifications.html" class="icon-btn" title="Notifications">
                     <i class="fa-solid fa-bell"></i>
                 </a>
@@ -309,14 +312,82 @@
                     </div>
                 </div>
 
+                <div class="room-description-section">
+                    <h3>
+                        <i class="fa-solid fa-align-left"></i>
+                        Room Description
+                    </h3>
+                    <fieldset class="description-fieldset">
+                        <legend>Public Description (Visible to Tenants)</legend>
+                        <textarea rows="5" placeholder="Add a description of this room for potential tenants...">Spacious room with natural lighting, air-conditioned, and includes a study desk and wardrobe. Located on the ground floor with easy access to common areas.</textarea>
+                    </fieldset>
+                </div>
+
+                <div class="room-photos-section">
+                    <h3>
+                        <i class="fa-solid fa-images"></i>
+                        Room Photos
+                    </h3>
+                    <div class="photo-upload-area">
+                        <label for="room-photos" class="upload-button">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Upload Room Photos</span>
+                            <input type="file" id="room-photos" accept="image/*" multiple style="display: none;">
+                        </label>
+                        <p class="upload-hint">
+                            <i class="fa-solid fa-info-circle"></i>
+                            Upload photos to showcase this room to potential tenants. Supports JPG, PNG (Max 5MB each)
+                        </p>
+                    </div>
+
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="https://via.placeholder.com/400x300/f5b400/000000?text=Room+View+1" alt="Room photo 1">
+                            <div class="photo-overlay">
+                                <button class="photo-action-btn primary" title="Set as Primary">
+                                    <i class="fa-solid fa-star"></i>
+                                </button>
+                                <button class="photo-action-btn delete" title="Delete Photo">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <span class="primary-badge">Primary Photo</span>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/666666?text=Room+View+2" alt="Room photo 2">
+                            <div class="photo-overlay">
+                                <button class="photo-action-btn primary" title="Set as Primary">
+                                    <i class="fa-solid fa-star"></i>
+                                </button>
+                                <button class="photo-action-btn delete" title="Delete Photo">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/666666?text=Room+View+3" alt="Room photo 3">
+                            <div class="photo-overlay">
+                                <button class="photo-action-btn primary" title="Set as Primary">
+                                    <i class="fa-solid fa-star"></i>
+                                </button>
+                                <button class="photo-action-btn delete" title="Delete Photo">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="room-notes-section">
                     <h3>
                         <i class="fa-solid fa-sticky-note"></i>
-                        Room Notes
+                        Internal Notes
                     </h3>
                     <fieldset class="notes-fieldset">
-                        <legend>Internal Notes</legend>
-                        <textarea readonly rows="3" placeholder="Add internal notes about this room...">Recently repainted. AC serviced on Jan 10, 2026.</textarea>
+                        <legend>Manager Notes (Private)</legend>
+                        <textarea rows="3" placeholder="Add internal notes about this room (not visible to tenants)...">Recently repainted. AC serviced on Jan 10, 2026.</textarea>
                     </fieldset>
                 </div>
             </div>

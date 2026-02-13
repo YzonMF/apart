@@ -534,14 +534,19 @@
 }
 
 /* Room Notes Section */
+.room-description-section,
+.room-photos-section,
 .room-notes-section {
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: var(--radius);
     padding: 30px;
+    margin-bottom: 30px;
     box-shadow: var(--shadow);
 }
 
+.room-description-section h3,
+.room-photos-section h3,
 .room-notes-section h3 {
     font-size: 1.3rem;
     font-weight: 700;
@@ -552,22 +557,27 @@
     gap: 10px;
 }
 
+.room-description-section h3 i,
+.room-photos-section h3 i,
 .room-notes-section h3 i {
     color: var(--accent);
 }
 
+.description-fieldset,
 .notes-fieldset {
     border: 2px solid var(--border);
     border-radius: 12px;
     padding: 20px;
 }
 
+.description-fieldset legend,
 .notes-fieldset legend {
     padding: 0 12px;
     font-weight: 600;
     color: var(--text-secondary);
 }
 
+.description-fieldset textarea,
 .notes-fieldset textarea {
     width: 100%;
     border: none;
@@ -577,6 +587,144 @@
     color: var(--text-primary);
     background: transparent;
     outline: none;
+    line-height: 1.6;
+}
+
+/* Photo Upload Area */
+.photo-upload-area {
+    margin-bottom: 30px;
+}
+
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: var(--dark);
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent);
+}
+
+.upload-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 180, 0, 0.3);
+}
+
+.upload-button i {
+    font-size: 1.3rem;
+}
+
+.upload-hint {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-hint i {
+    color: var(--accent);
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--border);
+    transition: all 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.photo-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-action-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photo-action-btn.primary:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+}
+
+.photo-action-btn.delete:hover {
+    background: var(--danger);
+    color: white;
+    transform: scale(1.1);
+}
+
+.primary-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent);
+    color: var(--dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.primary-badge::before {
+    content: '★';
+    font-size: 1rem;
 }
 
 /* Responsive */
@@ -612,5 +760,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
     }
 }

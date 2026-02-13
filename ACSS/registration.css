@@ -224,6 +224,201 @@ form:has(#role-landowner:checked) .landowner-fields {
     transform: translateY(0);
 }
 
+/* Terms and Conditions Section */
+.terms-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #2d2d2d;
+    border-radius: 8px;
+    border: 2px solid #ff9800;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #ffc107;
+}
+
+.terms-checkbox span {
+    flex: 1;
+}
+
+.terms-link {
+    color: #ffc107;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #ff9800;
+}
+
+/* Terms Modal/Details */
+.terms-modal {
+    margin-top: 30px;
+    background: #1a1a1a;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.terms-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    cursor: pointer;
+    list-style: none;
+    color: #ffc107;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.terms-modal-header::-webkit-details-marker {
+    display: none;
+}
+
+.terms-modal-header:hover {
+    background: linear-gradient(135deg, #383838 0%, #2d2d2d 100%);
+    color: #ff9800;
+}
+
+.terms-modal-header i.bi-file-text {
+    font-size: 20px;
+}
+
+.terms-modal-header span {
+    flex: 1;
+}
+
+.terms-modal-header .toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.terms-modal[open] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.terms-modal-content {
+    padding: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    background: #2d2d2d;
+}
+
+/* Custom Scrollbar */
+.terms-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terms-modal-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.terms-modal-content::-webkit-scrollbar-thumb {
+    background: #ff9800;
+    border-radius: 4px;
+}
+
+.terms-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #ffc107;
+}
+
+.terms-document {
+    padding: 30px 25px;
+}
+
+.terms-document h3 {
+    color: #ffc107;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff9800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terms-document h3 i {
+    font-size: 24px;
+}
+
+.terms-section-content {
+    margin-bottom: 25px;
+}
+
+.terms-section-content h4 {
+    color: #ff9800;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.terms-section-content p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.terms-section-content ul {
+    margin: 10px 0;
+    padding-left: 25px;
+}
+
+.terms-section-content li {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.terms-section-content strong {
+    color: #ffc107;
+}
+
+.terms-acceptance {
+    margin-top: 30px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.terms-acceptance p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.terms-acceptance i {
+    color: #ffc107;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
 /* Login link */
 .login {
     text-align: center;
@@ -272,5 +467,22 @@ form:has(#role-landowner:checked) .landowner-fields {
     .submitbtn {
         padding: 12px;
         font-size: 15px;
+    }
+
+    .terms-document {
+        padding: 20px 15px;
+    }
+
+    .terms-modal-content {
+        max-height: 400px;
+    }
+
+    .terms-section-content h4 {
+        font-size: 15px;
+    }
+
+    .terms-section-content p,
+    .terms-section-content li {
+        font-size: 13px;
     }
 }

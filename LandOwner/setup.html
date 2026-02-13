@@ -5,249 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Setup · Property Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(145deg, #f0f0f0, #fafafa);
-            min-height: 100vh;
-            padding: 30px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .setup-wrapper {
-            max-width: 1100px;
-            width: 100%;
-        }
-        .setup-card {
-            background: white;
-            border-radius: 24px;
-            border: 2px solid #f5b400;
-            padding: 40px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-        }
-        h1 {
-            color: #000;
-            font-size: 2.2rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            border-bottom: 4px solid #f5b400;
-            padding-bottom: 20px;
-        }
-        h1 i { color: #f5b400; }
-        h2 {
-            color: #000;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 30px 0 20px;
-        }
-        .form-section {
-            background: #f9f9f9;
-            border-left: 8px solid #f5b400;
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .form-group label {
-            font-weight: 600;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .form-group input,
-        .form-group select {
-            padding: 12px 16px;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: 0.2s;
-            background: white;
-        }
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: #f5b400;
-            outline: none;
-        }
-
-        /* Floor Rooms Section */
-        .floor-rooms-section {
-            margin-top: 25px;
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            border: 2px solid #e0e0e0;
-        }
-        .floor-header-compact {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f5b400;
-        }
-        .floor-header-compact i {
-            color: #f5b400;
-            font-size: 1.3rem;
-        }
-        .floor-header-compact h3 {
-            font-size: 1.2rem;
-            color: #000;
-            margin: 0;
-        }
-        .room-count-badge {
-            background: #f5b400;
-            color: #000;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-left: auto;
-        }
-
-        /* Room Config Cards */
-        .rooms-config-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .room-config-card {
-            background: #f9f9f9;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .room-config-card:hover {
-            border-color: #f5b400;
-        }
-        .room-config-card[open] {
-            border-color: #f5b400;
-            box-shadow: 0 4px 12px rgba(245,180,0,0.15);
-        }
-        .room-config-summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
-            cursor: pointer;
-            list-style: none;
-            transition: background 0.2s;
-        }
-        .room-config-summary::-webkit-details-marker {
-            display: none;
-        }
-        .room-config-summary:hover {
-            background: rgba(245,180,0,0.05);
-        }
-        .room-summary-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .room-summary-left i {
-            color: #f5b400;
-            font-size: 1.1rem;
-        }
-        .room-summary-left strong {
-            font-size: 1.05rem;
-            color: #000;
-        }
-        .room-summary-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .config-status {
-            font-size: 0.85rem;
-            color: #888;
-            background: #eee;
-            padding: 4px 12px;
-            border-radius: 12px;
-        }
-        .room-config-summary i.fa-chevron-down {
-            color: #666;
-            font-size: 0.9rem;
-            transition: transform 0.3s;
-        }
-        .room-config-card[open] .room-config-summary i.fa-chevron-down {
-            transform: rotate(180deg);
-        }
-        .room-config-content {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #ddd;
-        }
-
-        .btn-save-setup {
-            background: #f5b400;
-            color: #000;
-            border: none;
-            padding: 18px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            cursor: default;
-            margin-top: 30px;
-            border: 2px solid #f5b400;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: #666;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        .back-link:hover { color: #f5b400; }
-        .demo-hint {
-            background: #e2e3e5;
-            border-radius: 8px;
-            padding: 10px 15px;
-            color: #383d41;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .setup-card {
-                padding: 30px 20px;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .room-config-summary {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            .room-summary-right {
-                width: 100%;
-                justify-content: space-between;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="MCSS/setup.css">
 </head>
 <body>
     <div class="setup-wrapper">
@@ -255,7 +13,7 @@
             <h1><i class="fa-solid fa-building"></i> Building Setup</h1>
             <p style="margin-bottom:20px; color:#666;">Configure your property before opening for tenants. Expand each room to set capacity and invite codes.</p>
 
-            <!--  Building Details -->
+            <!-- 1. Building Details -->
             <div class="form-section">
                 <h2><i class="fa-solid fa-city"></i> 1. Building Details</h2>
                 <div class="form-grid">
@@ -274,7 +32,7 @@
                 </div>
             </div>
 
-            <!--  Floor Configurations -->
+            <!-- 2. Floor Configuration -->
             <div class="form-section">
                 <h2><i class="fa-solid fa-layer-group"></i> 2. Floor Configuration</h2>
                 <div class="form-grid">
@@ -288,7 +46,7 @@
                 </p>
             </div>
 
-            <!--  Room Setup & Invite Codes (per room) -->
+            <!--  Room Setup & Invite Codes -->
             <div class="form-section">
                 <h2><i class="fa-solid fa-door-open"></i> 3. Room Setup & Configuration</h2>
                 <p style="margin-bottom:20px; color:#666;">Configure each room individually with capacity and invite codes.</p>
@@ -330,6 +88,10 @@
                                         <input type="text" value="BLD-A-G01" placeholder="e.g., BLD-A-001">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label><i class="fa-solid fa-coins"></i> Monthly Rate per Bed</label>
+                                    <input type="number" value="3500" placeholder="e.g., 3500">
+                                </div>
                             </div>
                         </details>
 
@@ -360,6 +122,10 @@
                                         <label><i class="fa-solid fa-ticket"></i> Invite Code</label>
                                         <input type="text" value="BLD-A-G02" placeholder="e.g., BLD-A-002">
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fa-solid fa-coins"></i> Monthly Rate per Bed</label>
+                                    <input type="number" value="3500" placeholder="e.g., 3500">
                                 </div>
                             </div>
                         </details>
@@ -392,6 +158,10 @@
                                         <input type="text" value="BLD-A-G03" placeholder="e.g., BLD-A-003">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label><i class="fa-solid fa-coins"></i> Monthly Rate per Bed</label>
+                                    <input type="number" value="3500" placeholder="e.g., 3500">
+                                </div>
                             </div>
                         </details>
 
@@ -423,152 +193,92 @@
                                         <input type="text" value="BLD-A-G04" placeholder="e.g., BLD-A-004">
                                     </div>
                                 </div>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- First Floor Rooms -->
-                <div class="floor-rooms-section">
-                    <div class="floor-header-compact">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <h3>1st Floor</h3>
-                        <span class="room-count-badge">4 Rooms</span>
-                    </div>
-                    
-                    <div class="rooms-config-list">
-                        <!-- Room 1-01 -->
-                        <details class="room-config-card">
-                            <summary class="room-config-summary">
-                                <div class="room-summary-left">
-                                    <i class="fa-solid fa-door-open"></i>
-                                    <strong>Room 1-01</strong>
-                                </div>
-                                <div class="room-summary-right">
-                                    <span class="config-status">Not Configured</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                            </summary>
-                            <div class="room-config-content">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-bed"></i> Bed Capacity</label>
-                                        <select>
-                                            <option>1 Bed</option>
-                                            <option selected>2 Beds</option>
-                                            <option>3 Beds</option>
-                                            <option>4 Beds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-ticket"></i> Invite Code</label>
-                                        <input type="text" value="BLD-A-101" placeholder="e.g., BLD-A-101">
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Room 1-02 -->
-                        <details class="room-config-card">
-                            <summary class="room-config-summary">
-                                <div class="room-summary-left">
-                                    <i class="fa-solid fa-door-open"></i>
-                                    <strong>Room 1-02</strong>
-                                </div>
-                                <div class="room-summary-right">
-                                    <span class="config-status">Not Configured</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                            </summary>
-                            <div class="room-config-content">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-bed"></i> Bed Capacity</label>
-                                        <select>
-                                            <option>1 Bed</option>
-                                            <option selected>2 Beds</option>
-                                            <option>3 Beds</option>
-                                            <option>4 Beds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-ticket"></i> Invite Code</label>
-                                        <input type="text" value="BLD-A-102" placeholder="e.g., BLD-A-102">
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Room 1-03 -->
-                        <details class="room-config-card">
-                            <summary class="room-config-summary">
-                                <div class="room-summary-left">
-                                    <i class="fa-solid fa-door-open"></i>
-                                    <strong>Room 1-03</strong>
-                                </div>
-                                <div class="room-summary-right">
-                                    <span class="config-status">Not Configured</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                            </summary>
-                            <div class="room-config-content">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-bed"></i> Bed Capacity</label>
-                                        <select>
-                                            <option>1 Bed</option>
-                                            <option selected>2 Beds</option>
-                                            <option>3 Beds</option>
-                                            <option>4 Beds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-ticket"></i> Invite Code</label>
-                                        <input type="text" value="BLD-A-103" placeholder="e.g., BLD-A-103">
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Room 1-04 -->
-                        <details class="room-config-card">
-                            <summary class="room-config-summary">
-                                <div class="room-summary-left">
-                                    <i class="fa-solid fa-door-open"></i>
-                                    <strong>Room 1-04</strong>
-                                </div>
-                                <div class="room-summary-right">
-                                    <span class="config-status">Not Configured</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                            </summary>
-                            <div class="room-config-content">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-bed"></i> Bed Capacity</label>
-                                        <select>
-                                            <option>1 Bed</option>
-                                            <option selected>2 Beds</option>
-                                            <option>3 Beds</option>
-                                            <option>4 Beds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label><i class="fa-solid fa-ticket"></i> Invite Code</label>
-                                        <input type="text" value="BLD-A-104" placeholder="e.g., BLD-A-104">
-                                    </div>
+                                <div class="form-group">
+                                    <label><i class="fa-solid fa-coins"></i> Monthly Rate per Bed</label>
+                                    <input type="number" value="3500" placeholder="e.g., 3500">
                                 </div>
                             </div>
                         </details>
                     </div>
                 </div>
 
-                <button class="btn-save-setup" disabled style="opacity:0.8; cursor:default; margin-top:25px;">
-                    <i class="fa-solid fa-floppy-disk"></i> Save Configuration (demo)
+                <button class="btn-save-setup" disabled style="opacity:0.8; cursor:default; margin-top:25px;" type="submit">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Configuration
                 </button>
-                <div class="demo-hint">
-                    <i class="fa-solid fa-info-circle"></i> This is a static preview. In production, clicking "Save Configuration" would store all room settings and generate invite codes automatically.
+            </div>
+
+            <!--  House Rules & Rental Agreement -->
+            <div class="form-section">
+                <h2><i class="fa-solid fa-file-contract"></i> 4. House Rules & Rental Agreement</h2>
+                <p style="margin-bottom:20px; color:#666;">Define the house rules and rental agreement terms for your property.</p>
+                
+                <div class="agreement-section">
+                    <h3 style="font-size:1.1rem; margin-bottom:15px; color:#000;">
+                        <i class="fa-solid fa-clipboard-list"></i> Boarding House Rental Agreement
+                    </h3>
+                    
+                    <fieldset class="agreement-fieldset">
+                        <legend>Agreement Template</legend>
+                        <textarea rows="25" placeholder="Enter your rental agreement and house rules...">BOARDING HOUSE RENTAL AGREEMENT
+
+1. THE PARTIES
+This Agreement is entered into this __ day of ________, 2026, by and between:
+
+Landlord: [Full Name]
+Tenant: [Full Name]
+
+2. THE PREMISES
+The Landlord agrees to rent out a [Room Number / Description] located at:
+Address: [Complete Address of the Boarding House]
+
+3. TERM OF LEASE
+The lease shall begin on [Start Date] and shall continue on a month-to-month basis. Either party may terminate this agreement by providing a written notice at least 30 days in advance.
+
+4. RENT AND DEPOSIT
+Monthly Rent: [Amount in Currency]
+Due Date: On or before the [Day, e.g., 5th] of every month.
+Security Deposit: [Amount] (Refundable upon move-out, minus any unpaid bills or damages beyond normal wear and tear).
+Utility Fees: [Specify if included or separate, e.g., "Electricity and Water are split equally among tenants"].
+
+5. HOUSE RULES & CONDUCT
+The Tenant agrees to abide by the following established house rules:
+
+• Cleanliness: Observe "Clean As You Go" (CLAYGO) in shared kitchens and bathrooms.
+• Quiet Hours: Noise must be kept to a minimum between 10:00 PM and 6:00 AM.
+• Guests: Visitors are allowed only in common areas and must leave by [Time]. No overnight guests without prior written consent from the Landlord.
+• No Alterations: No painting, drilling, or structural changes to the room without permission.
+• Illegal Activities: Possession of illegal drugs or engaging in criminal activity is ground for immediate eviction.
+
+6. MAINTENANCE AND REPAIRS
+The Landlord is responsible for major structural repairs.
+The Tenant is responsible for maintaining the cleanliness of their room and for any damages caused by negligence.
+
+7. TERMINATION
+The Landlord reserves the right to terminate this agreement immediately if the Tenant violates the house rules, fails to pay rent for [Number] consecutive days, or causes a significant disturbance to other residents.</textarea>
+                    </fieldset>
+
+                    <div class="agreement-options">
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Require tenants to accept terms during registration</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Send copy of agreement to tenant email upon acceptance</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            <span>Allow tenants to download agreement PDF</span>
+                        </label>
+                    </div>
                 </div>
+            </div>
+
+            <button class="btn-save-setup" disabled style="opacity:0.8; cursor:default; margin-top:25px;">
+                <i class="fa-solid fa-floppy-disk"></i> Save All Settings (demo)
+            </button>
+            <div class="demo-hint">
+                <i class="fa-solid fa-info-circle"></i> Complete setup saves: Building details, room configurations, and house rules/rental agreement.
             </div>
 
             <a href="landowner.html" class="back-link">
