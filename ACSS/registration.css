@@ -203,8 +203,8 @@ form:has(#role-landowner:checked) .landowner-fields {
 .submitbtn {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%); /* Orange to yellow gradient */
-    color: #000000; /* Black text */
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    color: #000000;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -261,104 +261,138 @@ form:has(#role-landowner:checked) .landowner-fields {
     text-decoration: underline;
     font-weight: 600;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .terms-link:hover {
     color: #ff9800;
 }
 
-/* Terms Modal/Details */
-.terms-modal {
-    margin-top: 30px;
-    background: #1a1a1a;
-    border: 2px solid #ff9800;
-    border-radius: 12px;
+/* Bootstrap-Style Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.terms-modal-header {
+.modal.show {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 20px;
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    cursor: pointer;
-    list-style: none;
-    color: #ffc107;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    justify-content: center;
+    opacity: 1;
 }
 
-.terms-modal-header::-webkit-details-marker {
-    display: none;
-}
-
-.terms-modal-header:hover {
-    background: linear-gradient(135deg, #383838 0%, #2d2d2d 100%);
-    color: #ff9800;
-}
-
-.terms-modal-header i.bi-file-text {
-    font-size: 20px;
-}
-
-.terms-modal-header span {
-    flex: 1;
-}
-
-.terms-modal-header .toggle-icon {
-    font-size: 18px;
+.modal-dialog {
+    position: relative;
+    width: auto;
+    max-width: 800px;
+    margin: 20px;
+    pointer-events: none;
+    transform: scale(0.9);
     transition: transform 0.3s ease;
 }
 
-.terms-modal[open] .toggle-icon {
-    transform: rotate(180deg);
+.modal.show .modal-dialog {
+    transform: scale(1);
+    pointer-events: auto;
 }
 
-.terms-modal-content {
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    max-height: 90vh;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 2px solid #ff9800;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+    margin: 0;
+    color: #ffc107;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-title i {
+    font-size: 24px;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: #ffc107;
+    font-size: 24px;
+    cursor: pointer;
     padding: 0;
-    max-height: 500px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background: #ff9800;
+    color: #000;
+    transform: rotate(90deg);
+}
+
+/* Modal Body */
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0;
     overflow-y: auto;
-    background: #2d2d2d;
+    max-height: calc(90vh - 180px);
 }
 
-/* Custom Scrollbar */
-.terms-modal-content::-webkit-scrollbar {
-    width: 8px;
+/* Custom Scrollbar for Modal */
+.modal-body::-webkit-scrollbar {
+    width: 10px;
 }
 
-.terms-modal-content::-webkit-scrollbar-track {
+.modal-body::-webkit-scrollbar-track {
     background: #1a1a1a;
 }
 
-.terms-modal-content::-webkit-scrollbar-thumb {
+.modal-body::-webkit-scrollbar-thumb {
     background: #ff9800;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.terms-modal-content::-webkit-scrollbar-thumb:hover {
+.modal-body::-webkit-scrollbar-thumb:hover {
     background: #ffc107;
 }
 
 .terms-document {
     padding: 30px 25px;
-}
-
-.terms-document h3 {
-    color: #ffc107;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #ff9800;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.terms-document h3 i {
-    font-size: 24px;
 }
 
 .terms-section-content {
@@ -398,7 +432,7 @@ form:has(#role-landowner:checked) .landowner-fields {
 .terms-acceptance {
     margin-top: 30px;
     padding: 20px;
-    background: #1a1a1a;
+    background: #2d2d2d;
     border-radius: 8px;
     border-left: 4px solid #ffc107;
 }
@@ -419,6 +453,50 @@ form:has(#role-landowner:checked) .landowner-fields {
     margin-top: 2px;
 }
 
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 25px;
+    border-top: 2px solid #ff9800;
+    background: #2d2d2d;
+    border-radius: 0 0 10px 10px;
+}
+
+.btn-modal-close,
+.btn-modal-accept {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-modal-close {
+    background: #383838;
+    color: #ffffff;
+}
+
+.btn-modal-close:hover {
+    background: #4d4d4d;
+    transform: translateY(-2px);
+}
+
+.btn-modal-accept {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.btn-modal-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+}
+
 /* Login link */
 .login {
     text-align: center;
@@ -428,18 +506,65 @@ form:has(#role-landowner:checked) .landowner-fields {
 }
 
 .login a {
-    color: #ffc107; /* Warning yellow */
+    color: #ffc107;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .login a:hover {
-    color: #ff9800; /* Orange on hover */
+    color: #ff9800;
     text-decoration: underline;
 }
 
 /* Responsive design */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 95%;
+        margin: 10px;
+    }
+
+    .modal-content {
+        max-height: 95vh;
+    }
+
+    .modal-body {
+        max-height: calc(95vh - 180px);
+    }
+
+    .modal-header,
+    .modal-footer {
+        padding: 15px 20px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-title i {
+        font-size: 20px;
+    }
+
+    .terms-document {
+        padding: 20px 15px;
+    }
+
+    .terms-section-content h4 {
+        font-size: 15px;
+    }
+
+    .terms-section-content p,
+    .terms-section-content li {
+        font-size: 13px;
+    }
+
+    .btn-modal-close,
+    .btn-modal-accept {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 480px) {
     .registrationcontainer {
         padding: 30px 25px;
@@ -469,20 +594,12 @@ form:has(#role-landowner:checked) .landowner-fields {
         font-size: 15px;
     }
 
-    .terms-document {
-        padding: 20px 15px;
+    .modal-footer {
+        flex-direction: column-reverse;
     }
 
-    .terms-modal-content {
-        max-height: 400px;
-    }
-
-    .terms-section-content h4 {
-        font-size: 15px;
-    }
-
-    .terms-section-content p,
-    .terms-section-content li {
-        font-size: 13px;
+    .btn-modal-close,
+    .btn-modal-accept {
+        width: 100%;
     }
 }
