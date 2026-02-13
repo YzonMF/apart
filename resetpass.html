@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="ACSS/registration.css">
+    <link rel="stylesheet" href="ACSS/reset.css">
 </head>
 <body>
     <div class="register-wrapper">
@@ -16,21 +17,32 @@
         </section>
         
         <section class="registrationcontainer">
-            
             <form method="POST" action="#">
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input id="password" name="password" type="password" placeholder="Input your password (min. 6 characters)" required
-                           value="demo123">
+                <!-- Step 1: Request OTP -->
+                <div class="otp-section">
+                    <h4><i class="bi bi-envelope"></i> 1. Request OTP</h4>
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="Enter your registered email" required>
+                    </div>
+                    <a href="#" class="btn-otp"><i class="bi bi-send"></i> Send OTP</a>
                 </div>
 
-                <div class="input-group">
-                    <label for="password">Re-enter Password</label>
-                    <input id="password" name="password" type="password" placeholder="Input your password (min. 6 characters)" required
-                           value="demo123">
+                <div class="otp-section">
+                    <h4><i class="bi bi-shield-lock"></i> 2. Verify Identity</h4>
+                    <div class="input-group">
+                        <label for="otp">Enter OTP</label>
+                        <input id="otp" name="otp" type="text" placeholder="6-digit OTP">
+                    </div>
+                    <p><strong>OR</strong></p>
+                    <div class="upload-section">
+                        <label for="idUpload">Upload Government ID</label>
+                        <input type="file" id="idUpload" class="file-input" accept=".jpg,.png,.pdf">
+                    </div>
                 </div>
-                
-                <button type="submit" class="submitbtn"><a href="index.html">Change Password</a></button>
+
+
+                <a href="newpassword.html" class="btn-verify"><i class="bi bi-check-circle"></i> Verify & Proceed to Set Password</a>
             </form>
         </section>
     </div>
