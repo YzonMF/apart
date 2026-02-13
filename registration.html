@@ -82,8 +82,8 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="permitnumber">Business Permit document</label>
-                        <input id="permitnumber" name="permitdoc" type="file">
+                        <label for="permitdoc">Business Permit document</label>
+                        <input id="permitdoc" name="permitdoc" type="file">
                     </div>
                 </div>
                 
@@ -93,7 +93,7 @@
                 <div class="terms-section">
                     <label class="terms-checkbox">
                         <input type="checkbox" name="accept_terms" id="accept_terms" required>
-                        <span>I agree to the <a href="#" class="terms-link" id="openTermsModal">Terms and Conditions</a> and <a href="#" class="terms-link" id="openPrivacyModal">Privacy Policy</a></span>
+                        <span>I agree to the <a href="#termsModal" class="terms-link" id="openTermsModal">Terms and Conditions</a> and <a href="#termsModal" class="terms-link" id="openPrivacyModal">Privacy Policy</a></span>
                     </label>
                 </div>
 
@@ -104,7 +104,7 @@
         </section>
     </div>
 
-    <!-- Terms and Conditions -->
+    <!-- Terms and Conditions Modal (CSS-only :target) -->
     <div class="modal" id="termsModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -113,9 +113,9 @@
                         <i class="bi bi-shield-check"></i>
                         Terms and Conditions & Privacy Policy
                     </h3>
-                    <button type="button" class="btn-close" aria-label="Close">
+                    <a href="#" class="btn-close" aria-label="Close">
                         <i class="bi bi-x-lg"></i>
-                    </button>
+                    </a>
                 </div>
                 <div class="modal-body">
                     <div class="terms-document">
@@ -209,61 +209,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-modal-close">Close</button>
-                    <button type="button" class="btn-modal-accept">Accept Terms</button>
+                    <a href="#" class="btn-modal-close">Close</a>
+                    <a href="#" class="btn-modal-accept">Accept Terms</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Modal Control -->
-    <script>
-        // Get modal and buttons
-        const modal = document.getElementById('termsModal');
-        const openButtons = document.querySelectorAll('#openTermsModal, #openPrivacyModal');
-        const closeButtons = modal.querySelectorAll('.btn-close, .btn-modal-close');
-        const acceptButton = modal.querySelector('.btn-modal-accept');
-        const checkbox = document.getElementById('accept_terms');
-
-        // Open modal
-        openButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close modal
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Accept terms
-        acceptButton.addEventListener('click', () => {
-            checkbox.checked = true;
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
-        });
-
-        // Close on backdrop click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        });
-    </script>
 </body>
 </html>
